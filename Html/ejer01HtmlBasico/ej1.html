@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ejer01HtmlBasico</title>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h1>Primer parrafo corto</h1>
+	<h2>Segundo Parrafo corto</h2>
+
+	<h2>Grupo de elementos de navegación</h2>
+	<ul>
+  		<li><a href="https://espanol.yahoo.com/" target="_blank">Yahoo</a></li>
+  		<li><a href="http://google.com/" target="_blank">Google<a></li>
+ 	    <li><a href="https://youtube.com/" target="_blank">Youtube<a></li>
+	</ul> 
+
+	<hr/>
+	<a href="ej1OtraPaginaEnMismaVentana.html">Enlace a otra pagina dentro de la misma pestaña</a> &nbsp;&nbsp;&nbsp; <a href="ej1OtraPaginaEnNuevaVentana.html" target="_blank">Enlace a otra pagina en nueva pestaña</a> &nbsp;&nbsp;&nbsp; <a href="#otroLugarDentro">Ancla a otro punto de esta página</a>
+	<hr/>
+
+	<section>
+		<h1>Cuerpo principal del contenido</h1>
+		<p>La etiqueta main es en HTML5 una etiqueta semantica. Esto quiere decir que tiene que ver con el significado de lo contenido dentro de ella. Define el contenido principal de la pagina. Unicamente puede haber una sola etiqueta como esta en todo el documento. <br> El contenido escrito aqui dentro no se repite en el resto del sitio (todo lo contrario a los encabezados de pagina, los menues de navegacion y los pie de pagina). Es usado por buscadores para indexar. </p>
+	</section>
+	<section>
+		<h2>Sección etiquetas semánticas estructurales más importantes</h2>
+		<ul>
+	  		<li>HEADER</li>
+	  		<li>FOOTER</li>
+	  		<li>SECTION</li>
+	  		<li>ARTICLE</li>
+	  		<li>NAV</li>
+	  		<li>ADDRESS</li>
+		</ul> 
+		<p>Las etiquetas semanticas estructuradas estan relacionadas directamente con el significado del contenido y no con los estilos ni las posiciones dentro del documento.</p>
+	</section>
+	<section>
+		<h2>Reglas para etiquetas semánticas:</h2>
+		<ul>
+	  		<li>Los distintos tipos de contenido se pueden asociar a las etiquetas SECTION.</li>
+	  		<li>Las unidades de contenido se asocian a las etiquetas ARTICLE. O sea que un SECTION anida multiples ARTICLES.</li>
+	  		<li>Las etiquetas HEADER y FOOTER pueden ser anidadas dentro de otras HEADER o FOOTER. Osea un FOOTER podria anida otro HEADER y FOOTER.</li>
+	  		<li>La etiqueta NAV debe ser única en el documento y corresponde a los elementos de navegacion del documento.</li>
+	  		<li>Reservar etiqueta h1 para usar dentro de etiquetas top level como main, header o footer</li>
+		</ul> 
+	</section>
+	<br/>
+	<section>
+		<h3>Section de imagenes</h3>
+		<p> En esta sección mostraremos imagenes identificativas de nuestro sitio.<br><br> La siguiente imagen esta insertada en tamaño natural.  </p>
+		<img alt="Foto de El Greco" src="./greco.gif"/>
+		<p>
+			La misma imagen, cuadro del El Greco (220px x 268px), con distintos atributos width:
+		<br><br>
+			De acuerdo a la disminucion de la imagen, solo la primera no pixelará
+		<br><br>
+			Cada elemento img se ubica al lado de la anterior hasta completar el ancho de la ventana activa (view port)
+		<br><br>
+			Todas las siguientes imagenes se verán deformadas por haber definido doble parametro de estilo (ancho y alto)
+		</p>
+		<img alt="Foto de El Greco" style="width:100px;height:500px" src="./greco.gif">
+		<img alt="Foto de El Greco" style="width:200px;height:500px" src="./greco.gif">
+		<img alt="Foto de El Greco" style="width:250px;height:500px" src="./greco.gif">
+		<img alt="Foto de El Greco" style="width:320px;height:500px" src="./greco.gif">
+		<img alt="Foto de El Greco" style="width:420px;height:500px" src="./greco.gif">
+	</section>
+	<section>
+		<br/><br/><br/><br/>
+		<hr/>
+		<h3>Section de video</h3>
+		<video  width="550" height="310" controls>
+  			<source src="./Wildlife.mp4" type="video/mp4">
+		</video>
+	</section>
+
+	<section id="otroLugarDentro">
+		<h2>Anclajes</h2>
+		<p>Punto de anclado</p>
+	</section>
+	<section>
+		<h1>Datos del alumno</h1>
+		<adress><i>Matías Rosofsky - Libertador 888 <br><br> <a href="https://gmail.com/" target="_blank" >matias.rosofsky@comunidad.ub.edu.ar</a></i></adress>
+	</section>
+	
+	
+
+</body>
+</html>
