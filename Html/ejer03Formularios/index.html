@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej 3 HTML</title>
+  </head>
+  <body>
+    <h1>Formulario para entradas sin validación</h1>
+    <form method="GET" action="./respuestaFormulario.html" target="_blank">
+      <ul>
+        <li style="margin-top: 10px;">
+          <label style="font-weight: bold;" for="apellido">Apellido: </label><br />
+          <input
+            type="text"
+            id="apellido"
+            name="apellido"
+            autofocus="autofocus"
+          />
+        </li>
+        <li style="margin-top: 10px;">
+          <label style="font-weight: bold;" for="contrasenia">Contraseña</label><br />
+          <input id="contrasenia" name="contrasenia" type="password" />
+        </li>
+        <li style="margin-top: 10px;">
+          <label style="font-weight: bold;" for="oculto">Oculto: </label><br />
+          <input type="hidden" name="oculto" id="oculto" />
+        </li>
+        <li style="margin-top: 10px;">
+          <label style="font-weight: bold;" for="deshabilitado">Campo deshabilitado: </label><br />
+          <input
+            type="text"
+            name="deshabilitado"
+            id="deshabilitado"
+            disabled="disabled"
+            placeholder="valor deshabilitado"
+          />
+        </li>
+        <li style="margin-top: 10px;">
+          <label style="font-weight: bold;" for="lectura">Campo de solo lectura: </label><br />
+          <input
+            type="text"
+            id="lectura"
+            name="lectura"
+            placeholder="valorSoloLectura"
+            readonly
+          />
+        </li>
+        <li style="margin-top: 10px;">
+          <label style="font-weight: bold;" for="deportes">Practica deportes </label><br />
+          <input type="checkbox" name="deportes" id="deportes" value="si" />
+        </li>
+        <li style="margin-top: 10px;">
+          <label style="font-weight: bold;" for="musical">Practica musical</label><br />
+          <input type="checkbox" name="musical" id="musical" value="si" />
+        </li>
+        <li style="margin-top: 10px;">
+          <label style="font-weight: bold;" for="pinturaArtistica"
+            >Practica de pintura artistica </label
+          ><br />
+          <input
+            type="checkbox"
+            name="pinturaArtistica"
+            id="pinturaArtistica"
+            value="si"
+          />
+          <li style="margin-top: 10px;">
+            <label style="font-weight: bold;">Sexo</label><br />
+            <label for="masculino">Masculino </label>
+            <input type="radio" name="sexo" id="masculino" value="m" checked="checked"/>
+            <label for="femenino">Femenino</label>
+            <input type="radio" name="sexo" id="femenino" value="f" />
+          </li>
+        </li>
+        <li style="margin-top: 10px;">
+            <label style="font-weight: bold;" for="estudios">Estudios cursados: </label><br>
+            <select name="estudios" id="estudios">
+                <option value="pri" selected="selected" >Primario</option>
+                <option value="sec" >Secundario</option>
+                <option value="ter">Terciario</option>
+                <option value="uni">Universitario</option>
+                <option value="pos">Postgrado</option>
+            </select>
+        </li>
+        <li style="margin-top: 10px;">
+            <label style="font-weight: bold;" for="fecha">Fecha y hora: </label><br>
+            <input type="date" name="fecha" id="fecha"> <input type="time" name="hora" id="hora">
+        </li>
+        <li style="margin-top: 10px;">
+            <label style="font-weight: bold;" for="color"> Color</label><br>
+            <input type="color" name="color" id="color">
+        </li>
+        <li style="margin-top: 10px;">
+            <button type="submit">Enviar Formulario sin  validación</button>
+        </li>
+        <li style="margin-top: 10px;">
+            <button type="reset">Reset a valores predeterminados</button>
+        </li>
+      </ul>
+    </form>
+
+    <h1>Formulario para entradas con validación</h1>
+    <form method="GET" action="./respuestaFormulario.html" target="_blank">
+    <ul>
+        <li style="margin-top: 10px;">
+            <label style="font-weight: bold;" for="comentario">Comentario (validación por requerido):</label><br>
+            <input type="text" name="comentario" id="comentario" required>
+        </li>
+        <li style="margin-top: 10px;">
+            <label style="font-weight: bold;" for="email" >Email con doble validación (X@X y required):</label><br>
+            <input type="email" name="email" id="email" placeholder="texto@texto" required>
+        </li>
+        <li style="margin-top: 10px;">
+            <label style="font-weight: bold;" for="entero">Numero entero limitad (validación por tipo numerico y cotas):</label><br>
+            <input type="number" name="entero" id="entero" min="1" max="5" required>
+        </li>
+        <li style="margin-top: 10px;">
+            <label style="font-weight: bold;" for="real">Numero decimal</label><br>
+            <input type="number" name="real" id="real" min="0" max="9" step="0.1" required>
+        </li>
+        <li style="margin-top: 10px;">
+            <label style="font-weight: bold;" for="sitio">URL(validación por requerido, escribir http://):</label><br>
+            <input type="url" name="sitio" id="sitio" placeholder="http://xxx" required>
+        </li>
+        <li style="margin-top: 10px;">
+            <label style="font-weight: bold;" for="mascara">Pattern de validación</label><br>
+            <input type="text" name="mascara" id="mascara" pattern="[a-z]{3}[1-2]{2}" title="3 letras y dos numeros que sean 1 0 2 solamente" required>
+        </li>
+        <li style="margin-top: 10px;">
+            <label style="font-weight: bold;" for="mascara2">Pattern de validación</label><br>
+            <input type="text" name="mascara2" id="mascara2" pattern="^[+]\d{2} \d{2} \d{4}-\d{4}$" title="+54 11 4254-1254" required>
+        </li>
+
+        <li style="margin-top: 10px;">
+            <button type="submit">Enviar</button>
+        </li>    
+    </ul>
+    </form>
+   </body>
+</html>
