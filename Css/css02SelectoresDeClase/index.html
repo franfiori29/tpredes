@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css - Selectores de clase</title>
+    <style>
+      .claseDestacado {
+        font-weight: bold;
+      }
+      .claseAcotacion {
+        border: solid 2px rgb(90, 44, 216);
+        color: rgb(90, 44, 216);
+        font-style: italic;
+        text-align: center;
+      }
+      .claseAyuda {
+        color: rgb(56, 189, 122);
+        border: dotted 2px rgb(133, 197, 36);
+        width: 50%;
+      }
+      .claseContenidoComun {
+        color: black;
+      }
+      #idUnico {
+        width: 25%;
+        border: solid 3px violet;
+        color: violet;
+      }
+      .imagenAl50 {
+        max-width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Página sin style como atributo</h1>
+    <h2>El estilo se encuentra definido en la etiqueta style dentro de head</h2>
+    <p>
+      Este párrafo tiene un grupo de palabras delimitado por una etiqueta "span". El
+      comienzo es aquí:<span class="claseDestacado"
+        >grupo de palabras destacadas en el estilo claseDestacado</span
+      >
+    </p>
+    <p class="claseAcotacion">
+      Este párrafo toma el estilo definido en la etiqueta style en el header del
+      documento como class="claseAcotacion"
+    </p>
+    <p class="claseDestacado">
+      Este párrafo tiene como atributo class claseDestacado
+    </p>
+    <p class="claseAyuda">
+      Este parrafo tiene toma el estilo de la clase "claseAyuda"
+    </p>
+    <p class="claseContenidoComun">
+      Este párrafo toma el estilo de la clase "claseContenidoComun"
+    </p>
+    <p id="idUnico">
+      Párrafo formateado por un estilo particular definido en el style del documento
+      para un párrafo específico id="idUnico"
+    </p>
+    <h1>
+      Todas las clases con class="imagenAl50" en esta página se encuentran limitadas
+      al 50% del ancho del viewport más allá de su tamaño real en px:
+    </h1>
+    <img
+      src="../../Html/ejer04ListasArchivos/imagenjpg.jpg"
+      class="imagenAl50"
+    /><br />
+    <img src="../../Html/ejer04ListasArchivos/imagengif.gif" class="imagenAl50" />
+    <br />
+    <a href="../">Volver Atrás</a>
+  </body>
+</html>

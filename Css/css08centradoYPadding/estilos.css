@@ -1,0 +1,17 @@
+div {
+  margin: auto;
+  width: 50%;
+}
+#div1 {
+  background-color: aqua;
+}
+#div2 {
+  background-color: rgb(240, 128, 128);
+  box-sizing: content-box;
+  padding: 0 100px;
+}
+#div3 {
+  background-color: rgb(157, 255, 132);
+  box-sizing: border-box;
+  padding: 0 100px;
+}

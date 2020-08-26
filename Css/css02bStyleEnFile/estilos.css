@@ -1,0 +1,13 @@
+h1 {
+  color: rgb(69, 69, 240);
+  text-align: center;
+  border: 2px dotted;
+  border-width: 6px;
+  padding: 10px 0;
+}
+p {
+  border-style: solid none;
+  color: rgb(247, 130, 130);
+  font-size: 18px;
+  font-style: italic;
+}
