@@ -1,0 +1,42 @@
+#divContenedor {
+  background-color: aquamarine;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+#divContenedor > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 190px;
+  width: 380px;
+  margin: 10px 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+#divPrimero {
+  background: linear-gradient(0deg, yellow, white, pink);
+  font-weight: bolder;
+  box-shadow: 5px 5px 5px rgba(5, 5, 5, 0.473);
+}
+#divSegundo {
+  font-size: 50px;
+  background: radial-gradient(circle, cyan, lightyellow);
+}
+#divTercero {
+  background: linear-gradient(45deg, orange, magenta, green);
+  box-shadow: 5px 5px 5px rgba(5, 5, 5, 0.61);
+  font-size: 1.5em;
+}
+
+#divCuarto {
+  background: linear-gradient(45deg, blue, yellow, blue);
+  font-size: 3em;
+}
+#divQuinto {
+  background: linear-gradient(-45deg, red, yellow, cyan);
+  font-size: 2em;
+  font-style: italic;
+}

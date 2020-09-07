@@ -1,0 +1,51 @@
+#divContenedor {
+  background-color: aquamarine;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#divContenedor > div {
+  display: flex;
+  height: 25vh;
+  width: 25vw;
+  margin: 5px 0;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+#divPrimero {
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, yellow, white, pink);
+  font-weight: bolder;
+  box-shadow: 5px 5px 5px rgba(5, 5, 5, 0.473);
+}
+#divSegundo {
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  background: radial-gradient(circle, cyan, lightyellow);
+}
+#divTercero {
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(45deg, orange, magenta, green);
+}
+#divImagen3 {
+  flex: 1;
+}
+#textoDiv3 {
+  flex: 1;
+}
+#divImagen3 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#divCuarto {
+  background: linear-gradient(45deg, blue, yellow, blue);
+}
+#divQuinto {
+  background: linear-gradient(-45deg, red, yellow, cyan);
+}
