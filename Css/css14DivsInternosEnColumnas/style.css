@@ -7,14 +7,14 @@
 #divContenedor {
   width: 90%;
   margin: auto;
-  background-color: beige;
+  background-color: rgb(123, 240, 94);
   padding-bottom: 70%;
 }
 
 #divContenedor div {
   width: 30%;
   margin: 5px 5px;
-  background-color: lightblue;
+  background-color: rgb(240, 176, 58);
 }
 
 #div1,
