@@ -8,7 +8,7 @@
   width: 90%;
   margin: auto;
   background-color: rgb(150, 236, 232);
-  padding-bottom: 20vh;
+  padding-bottom: 60vh;
 }
 
 .boton a {
@@ -30,9 +30,9 @@
 
 .foto {
   float: left;
-  border: 1px solid black;
-  width: 100px;
-  height: 100px;
+  border: 2px solid black;
+  width: 200px;
+  height: 200px;
 }
 
 .foto img {
@@ -55,10 +55,10 @@ input:focus {
 
 .boton a {
   text-decoration: none;
-  color: black;
+  color: rgb(255, 119, 119);
 }
 
 .foto:active {
-  width: 600px;
-  height: 400px;
+  width: 50vw;
+  height: 50vh;
 }
