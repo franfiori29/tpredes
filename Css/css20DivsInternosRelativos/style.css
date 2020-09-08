@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(236, 228, 109);
+}
+#divContenedor {
+  background-color: aquamarine;
+  width: 80%;
+  margin: auto;
+}
+#divFijo {
+  position: fixed;
+  width: 30vw;
+  height: 20vh;
+  top: 20%;
+  left: 30%;
+  opacity: 0.5;
+  overflow-y: scroll;
+  visibility: visible;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.479);
+  color: aliceblue;
+}
+.divRelativo1 {
+  position: relative;
+  width: 75%;
+  background-color: bisque;
+  margin-top: 10px;
+}
+.divRelativo2 {
+  width: 50%;
+  background-color: dodgerblue;
+  padding: 8px;
+  position: relative;
+  left: 20%;
+  margin: 40px;
+}
+.divRelativo3 {
+  width: 40%;
+  height: 10vh;
+  background-color: darkseagreen;
+  padding: 10px;
+  overflow-y: scroll;
+  position: relative;
+  left: 40%;
+}
