@@ -7,18 +7,18 @@
 .container {
   width: 90%;
   margin: auto;
-  max-height: 800px;
   background-color: rgb(150, 236, 232);
-  padding-bottom: 10%;
+  padding-bottom: 20vh;
 }
 
 .boton a {
-  width: 100px;
-  display: block;
-  background-color: rgb(163, 163, 163);
-  border-right: 1px solid blue;
+  width: 10%;
+  background-color: rgba(163, 163, 163, 0);
+  border: 5px solid rgb(255, 119, 119);
+  border-radius: 30px;
   float: left;
   padding: 10px;
+  margin: 15px;
   text-align: center;
 }
 
