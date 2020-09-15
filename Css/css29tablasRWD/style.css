@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.contenedor {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(177, 253, 177);
+}
+h1 {
+  color: white;
+  background-color: rgb(255, 172, 206);
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+table {
+  width: 100vw;
+  height: 50vh;
+  border-spacing: 0;
+  border: 3px solid black;
+}
+
+thead,
+tbody {
+  display: block;
+}
+
+thead th {
+  background-color: rgb(255, 148, 232);
+  color: white;
+  border-left: 1px solid black;
+  height: 10vh;
+  width: 100vw;
+}
+tr:nth-of-type(2n + 1) {
+  background-color: rgb(224, 156, 156);
+}
+
+tbody {
+  overflow-y: scroll;
+  text-align: center;
+  max-height: 40vh;
+}
+
+td,
+th {
+  height: 10vh;
+  width: 100vw;
+}
+
+@media (min-width: 720px) and (max-width: 1280px) {
+  body {
+    width: 720px;
+  }
+  .desktop {
+    display: none;
+  }
+  tbody {
+    overflow-y: scroll;
+  }
+}
+@media (min-width: 300px) and (max-width: 720px) {
+  body {
+    width: 320px;
+  }
+  .tablet {
+    display: none;
+  }
+  tbody {
+    overflow-y: scroll;
+  }
+}
