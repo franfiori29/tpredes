@@ -1,9 +1,189 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
+
 body {
+  width: 100vw;
+  height: auto;
+}
+
+#container {
+  width: 90vw;
   height: 100vh;
-  width: 100%;
+  margin: auto;
+  background-color: coral;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+header,
+footer {
+  width: 90vw;
+  height: 10vh;
+  background-color: rgb(163, 253, 163);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 5vh;
+  list-style: none;
+  background-color: rgb(164, 250, 246);
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+nav a:hover {
+  background-color: rgb(75, 57, 236);
+  color: white;
+}
+nav ul li {
+  width: 22.5vw;
+}
+
+.bloque {
+  width: 90vw;
+  height: 74.5vh;
+  display: flex;
+}
+
+.texto {
+  width: 22.5vw;
+  height: auto;
+  background-color: rgb(255, 169, 71);
+}
+
+.imagen {
+  width: 17.8vw;
+  height: 20vh;
+}
+
+#fot02 {
+  transform: translate(-10%, -20%);
+}
+
+#foto1 {
+  transform: rotateZ(10deg);
+}
+
+.imagen img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (min-width: 900px) and (max-width: 1280px) {
+  .tablet {
+    display: none;
+  }
+  .bloque {
+    overflow-y: scroll;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-content: flex-start;
+    height: auto;
+  }
+
+  nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: black;
+    max-width: 90vw;
+    width: 700vw;
+  }
+
+  nav a:hover {
+    background-color: rgb(101, 103, 243);
+    color: white;
+  }
+
+  nav ul li {
+    width: auto;
+  }
+
+  header,
+  footer {
+    height: auto;
+  }
+
+  .texto {
+    width: 30vw;
+    height: auto;
+  }
+
+  .bloque .imagen {
+    width: 40vw;
+    height: 25vh;
+  }
+
+  .bloque {
+    background-color: gray;
+  }
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  .movil {
+    display: none;
+  }
+  .bloque {
+    overflow-y: scroll;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-content: flex-start;
+    height: auto;
+  }
+
+  nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: black;
+    border: solid 1px black;
+    max-width: 90vw;
+    width: 300vw;
+  }
+
+  nav a:hover {
+    background-color: rgb(40, 29, 194);
+    color: white;
+  }
+
+  nav ul li {
+    width: auto;
+  }
+
+  header,
+  footer {
+    height: auto;
+  }
+
+  .texto {
+    width: 45vw;
+    height: auto;
+  }
+
+  .imagen {
+    width: 40vw;
+    height: 25vh;
+  }
+
+  .bloque {
+    background-color: gray;
+  }
 }
