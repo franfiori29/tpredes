@@ -61,6 +61,10 @@ input {
   margin: 10px;
   font-size: 2em;
 }
+input:focus,
+button:focus {
+  outline: 0;
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
