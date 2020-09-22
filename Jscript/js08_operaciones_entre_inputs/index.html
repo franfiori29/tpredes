@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js08</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="contenedor">
+      <label for="entrada1">Entrada 1:</label>
+      <input type="number" name="entrada1" id="entrada1" value="0" /><br />
+      <label for="entrada2">Entrada 2:</label>
+      <input type="number" name="entrada2" id="entrada2" value="0" /><br />
+      <label for="entrada3">Entrada 3:</label>
+      <input type="number" name="entrada3" id="entrada3" value="0" /><br />
+      <label for="result">Resultado:</label>
+      <input type="number" name="resultado" id="resultado" />
+
+      <div class="botones">
+        <button id="suma">Suma</button>
+        <button id="promedio">Promedio</button>
+        <button id="mayor">Mayor</button>
+      </div>
+    </div>
+
+    <script>
+      var valor1;
+      var valor2;
+      var valor3;
+      var resultado;
+
+      const getValores = () => {
+        valor1 = +document.getElementById("entrada1").value;
+        valor2 = +document.getElementById("entrada2").value;
+        valor3 = +document.getElementById("entrada3").value;
+      };
+
+      suma.onclick = () => {
+        getValores();
+        document.getElementById("resultado").value = valor1 + valor2 + valor3;
+      };
+
+      promedio.onclick = () => {
+        getValores();
+        document.getElementById("resultado").value = (valor1 + valor2 + valor3) / 3;
+      };
+
+      mayor.onclick = () => {
+        getValores();
+        document.getElementById("resultado").value = Math.max(
+          valor1,
+          valor2,
+          valor3
+        );
+      };
+    </script>
+    <br />
+    <p>Franco Fiori - franco.fiori@comunidad.ub.edu.ar</p>
+  </body>
+</html>

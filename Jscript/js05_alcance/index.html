@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js05</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        padding: 5px;
+        margin: 0px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button onclick="mostrarIncorrecta()">Inicialización Incorrecta</button>
+      <button onclick="mostrarCorrecta()">Inicialización Correcta</button>
+      <button onclick="mostrarVariable()">Muestra Variable Global</button>
+    </div>
+    <script>
+      var variable;
+      function mostrarIncorrecta() {
+        var variable = prompt("Valor para la variable global:");
+        alert("Valor de la variable local ingresada: " + variable);
+        alert("Tipo de la variable local ingresada: " + typeof variable);
+      }
+
+      function mostrarCorrecta() {
+        variable = prompt("Valor para la variable global:");
+        alert("Valor de la variable local ingresada: " + variable);
+        alert("Tipo de la variable local ingresada: " + typeof variable);
+      }
+
+      function mostrarVariable() {
+        if (variable == undefined) {
+          alert("Variable global no ha sido asignada: " + variable);
+        } else {
+          alert("Valor de la variable: " + variable);
+        }
+      }
+    </script>
+
+    <br />
+    <p>Franco Fiori - franco.fiori@comunidad.ub.edu.ar</p>
+  </body>
+</html>

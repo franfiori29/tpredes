@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>js07</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="entrada">
+        <input type="number" id="valor" autofocus readonly />
+      </div>
+      <div class="numeros">
+        <button class="numero" id="1">1</button>
+        <button class="numero" id="2">2</button>
+        <button class="numero" id="3">3</button>
+        <button class="numero" id="4">4</button>
+        <button class="numero" id="5">5</button>
+        <button class="numero" id="6">6</button>
+        <button class="numero" id="7">7</button>
+        <button class="numero" id="8">8</button>
+        <button class="numero" id="9">9</button>
+        <button class="numero" id="0">0</button>
+      </div>
+      <div class="opNumericas">
+        <button id="suma">+</button>
+        <button id="mostrar">Muestra Acumulador</button>
+        <button id="borrarAcumulador">Borrar Acumulador</button>
+        <button id="borrarDisplay">Borrar Display</button>
+      </div>
+    </div>
+    <script>
+      var total = document.getElementById("valor").value;
+      var suma = document.getElementById("suma");
+      var valorAcumulado = 0;
+      var borrarAcumulador = document.getElementById("borrarAcumulador");
+      var borrarDisplay = document.getElementById("borrarDisplay");
+
+      var uno = document.getElementById("1");
+      var dos = document.getElementById("2");
+      var tres = document.getElementById("3");
+      var cuatro = document.getElementById("4");
+      var cinco = document.getElementById("5");
+      var seis = document.getElementById("6");
+      var siete = document.getElementById("7");
+      var ocho = document.getElementById("8");
+      var nueve = document.getElementById("9");
+      var cero = document.getElementById("0");
+
+      uno.onclick = () => {
+        total += "1";
+        document.getElementById("valor").value = total;
+      };
+      dos.onclick = () => {
+        total += "2";
+        document.getElementById("valor").value = total;
+      };
+      tres.onclick = () => {
+        total += "3";
+        document.getElementById("valor").value = total;
+      };
+      cuatro.onclick = () => {
+        total += "4";
+        document.getElementById("valor").value = total;
+      };
+      cinco.onclick = () => {
+        total += "5";
+        document.getElementById("valor").value = total;
+      };
+      seis.onclick = () => {
+        total += "6";
+        document.getElementById("valor").value = total;
+      };
+      siete.onclick = () => {
+        total += "7";
+        document.getElementById("valor").value = total;
+      };
+      ocho.onclick = () => {
+        total += "8";
+        document.getElementById("valor").value = total;
+      };
+      nueve.onclick = () => {
+        total += "9";
+        document.getElementById("valor").value = total;
+      };
+      cero.onclick = () => {
+        total += "0";
+        document.getElementById("valor").value = total;
+      };
+
+      const resetAcumulador = () => {
+        total = "";
+        document.getElementById("valor").value = "";
+      };
+
+      borrarDisplay.onclick = () => resetAcumulador();
+
+      borrarAcumulador.onclick = () => {
+        resetAcumulador();
+        if (valorAcumulado != "") valorAcumulado = 0;
+      };
+
+      suma.onclick = () => {
+        valorAcumulado += +total;
+        resetAcumulador();
+      };
+
+      mostrar.onclick = () => {
+        alert("Valor acumulado es: " + valorAcumulado);
+      };
+    </script>
+    <br />
+    <p>Franco Fiori - franco.fiori@comunidad.ub.edu.ar</p>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.contenedor {
+  width: 60vw;
+  height: 80vh;
+  margin: auto;
+  background-color: rgb(15, 14, 14);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 50vw;
+  text-align: right;
+  margin-top: 2%;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.numeros {
+  width: 50vw;
+  height: 40vh;
+  background-color: rgb(160, 226, 130);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.numeros .numero {
+  width: 12vw;
+  height: auto;
+  margin: 8px;
+  font-size: 2em;
+  border-radius: 30px;
+}
+
+.opNumericas {
+  width: 50vw;
+  height: 30vh;
+  background-color: rgb(123, 255, 248);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.opNumericas button {
+  border-radius: 30px;
+  width: 20vw;
+  margin: 10px;
+  font-size: 2em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}

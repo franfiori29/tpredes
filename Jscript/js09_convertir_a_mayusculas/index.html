@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Js09</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <label for="nombre">Ingrese nombre: </label>
+      <input type="text" name="nombre" id="nombre" />
+      <label for="apellido">Apellido: </label>
+      <input type="text" name="apellido" id="apellido" />
+      <label for="ciudad"
+        >Ciudad: (Este campo pasa a mayúscula en el evento "keyup")
+      </label>
+      <input type="text" name="ciudad" id="ciudad" />
+    </div>
+
+    <script>
+      const nombre = document.getElementById("nombre");
+      const apellido = document.getElementById("apellido");
+
+      nombre.addEventListener("change", () => {
+        document.getElementById("nombre").value = nombre.value.toUpperCase();
+      });
+
+      apellido.addEventListener("change", () => {
+        document.getElementById("apellido").value = apellido.value.toUpperCase();
+      });
+
+      ciudad.addEventListener("keyup", () => {
+        document.getElementById("ciudad").value = ciudad.value.toUpperCase();
+      });
+    </script>
+    <p>Franco Fiori - franco.fiori@comunidad.ub.edu.ar</p>
+  </body>
+</html>

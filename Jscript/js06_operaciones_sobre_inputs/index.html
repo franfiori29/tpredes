@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js06</title>
+  </head>
+  <body>
+    <body>
+      <h1>
+        Introducir un valor en el cuadro de texto y luego pulsar el boton para
+        ejecutar el procedimiento correspondiente
+      </h1>
+      <input type="text" id="valor" />
+      <button id="mostrarValor">Muestra valor</button>
+      <button id="sumar">Suma 1</button>
+      <button id="cuadrado">x**2</button>
+      <button id="multiplicar">Multiplica * 2</button>
+      <button id="elevar">2**x</button>
+    </body>
+    <script>
+      const getValor = () => document.getElementById("valor").value;
+
+      document.getElementById("mostrarValor").onclick = () => {
+        alert(getValor());
+      };
+
+      document.getElementById("sumar").onclick = () => {
+        //Usé el operador + que parsea a Int.
+        var valor = +getValor();
+        valor++;
+        document.getElementById("valor").value = valor;
+      };
+
+      document.getElementById("cuadrado").onclick = () => {
+        var valor = +getValor();
+        document.getElementById("valor").value = valor ** 2;
+      };
+
+      document.getElementById("multiplicar").onclick = () => {
+        var valor = +getValor();
+        document.getElementById("valor").value = valor * 2;
+      };
+
+      document.getElementById("elevar").onclick = () => {
+        var valor = +getValor();
+        document.getElementById("valor").value = 2 ** valor;
+      };
+    </script>
+    <br />
+    <p>Franco Fiori - franco.fiori@comunidad.ub.edu.ar</p>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js03</title>
+  </head>
+  <body>
+    <h1>Carda de variables locales</h1>
+    <script>
+      var d = prompt("Ingrese un valor para una variable global");
+      var z;
+      var a = 1;
+      var b = "1";
+      var c = 2;
+      document.write(
+        '<h2>variable<span style="color:red"> z </span>Inicializada desde el programa: ' +
+          z +
+          "</h2>"
+      );
+
+      document.write(
+        '<h2>tipo de<span style="color:red"> z </span>: ' + typeof z + "</h2>"
+      );
+
+      document.write(
+        '<h2>variable<span style="color:red"> a </span>Inicializada desde el programa: ' +
+          a +
+          "</h2>"
+      );
+
+      document.write(
+        '<h2>tipo de<span style="color:red"> a </span>: ' + typeof a + "</h2>"
+      );
+
+      document.write(
+        '<h2>variable<span style="color:red"> b </span>Inicializada desde el programa: ' +
+          b +
+          "</h2>"
+      );
+
+      document.write(
+        '<h2>tipo de<span style="color:red"> b </span>: ' + typeof b + "</h2>"
+      );
+
+      document.write(
+        '<h2>variable<span style="color:red"> c </span>Inicializada desde el programa: ' +
+          c +
+          "</h2>"
+      );
+
+      document.write(
+        '<h2>tipo de<span style="color:red"> c </span>: ' + typeof c + "</h2>"
+      );
+
+      document.write('<h2><span style="color:red"> a+b </span>: ' + a + b + "</h2>");
+
+      document.write(
+        '<h2>tipo de<span style="color:red"> a+b </span>: ' +
+          typeof (a + b) +
+          "</h2>"
+      );
+
+      document.write(
+        '<h2><span style="color:red"> a+c </span>: ' + (a + c) + "</h2>"
+      );
+
+      document.write(
+        '<h2>tipo de<span style="color:red"> a+c </span>: ' +
+          typeof (a + c) +
+          "</h2>"
+      );
+
+      document.write(
+        '<h2>variable<span style="color:red"> d </span>guardada desde teclado: ' +
+          d +
+          "</h2>"
+      );
+
+      document.write(
+        '<h2>tipo de<span style="color:red"> d </span>: ' + typeof d + "</h2>"
+      );
+    </script>
+    <p>Franco Fiori - franco.fiori@comunidad.ub.edu.ar</p>
+  </body>
+</html>
