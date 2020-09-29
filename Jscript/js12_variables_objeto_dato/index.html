@@ -3,10 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Js12</title>
   </head>
   <body>
-    <p>Franco Fiori - franco.fiori@comunidad.ub.edu.ar</p>
+    <div class="container">
+      <h2>Adicionar Persona</h2>
+      <div class="nombre">
+        <label>Nombre:</label><br />
+        <input type="text" id="nombre" required />
+      </div>
+      <div class="apellido">
+        <label>Apellido:</label><br />
+        <input type="text" id="apellido" required />
+      </div>
+      <div class="fecha">
+        <label>Fecha de Nacimiento:</label><br />
+        <input type="text" id="fecha" required />
+      </div>
+      <div class="button">
+        <button onclick="creaPersona()">Crea persona</button>
+      </div>
+    </div>
+    <div class="control">
+      <h2>Control</h2>
+      <div>
+        <button onclick="listaPersonas()">Lista personas</button>
+        <button onclick="ocultaPersonas()">Oculta presentación</button>
+      </div>
+    </div>
+    <div id="presentar"></div>
+
+    <script>
+      var franco = { nombre: "Franco", apellido: "Fiori", fecha: "02/09/1994" };
+      var julio = { nombre: "Julio", apellido: "Cortázar", fecha: "12/11/1995" };
+      var lista = [franco, julio];
+      var objetoPersonas = { personas: lista };
+
+      const listaPersonas = () => {
+        let texto =
+          "<h1>Presentación</h1><table><tr><th>Nombre</th><th>Apellido</th><th>Fecha</th></tr>";
+        lista.forEach((elem) => {
+          texto += `<tr><th>${elem.nombre}</th><th>${elem.apellido}</th><th>${elem.fecha}</th></tr>`;
+        });
+
+        document.getElementById("presentar").style.display = "block";
+        document.getElementById("presentar").innerHTML = texto;
+      };
+
+      const ocultaPersonas = () => {
+        document.getElementById("presentar").style.display = "none";
+      };
+
+      const creaPersona = () => {
+        let persona = {
+          nombre: document.getElementById("nombre").value,
+          apellido: document.getElementById("apellido").value,
+          fecha: document.getElementById("fecha").value,
+        };
+        lista.push(persona);
+        listaPersonas();
+      };
+    </script>
   </body>
 </html>

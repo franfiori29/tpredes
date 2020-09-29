@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Js21</title>
+  </head>
+  <body>
+    <form id="forma">
+      <div class="container">
+        <h2>Confirmacion de envio y reset</h2>
+        <div class="nombre">
+          <label>Nombre</label><br />
+          <input type="text" id="nombre" />
+        </div>
+        <div class="apellido">
+          <label>Apellido</label><br />
+          <input type="text" id="apellido" />
+        </div>
+      </div>
+      <div class="control">
+        <div>
+          <button id="blanquear">Blanquear</button>
+          <button id="enviar">Enviar</button>
+        </div>
+      </div>
+    </form>
+
+    <script>
+      document.getElementById("enviar").addEventListener("click", () => {
+        let result = confirm("Esta seguro de enviar??");
+        if (result) {
+          document.getElementById("forma").action = "./respuestaForm.html";
+          document.getElementById("forma").method = "get";
+          document.getElementById("forma").submit();
+        }
+      });
+
+      document.getElementById("blanquear").addEventListener("click", () => {
+        document.getElementById("forma").reset();
+      });
+    </script>
+  </body>
+</html>

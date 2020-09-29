@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js29</title>
+  </head>
+  <body>
+    <button id="yout">Youtube</button>
+    <button id="gmail">Gmail</button>
+    <button id="moodle">Moodle UB</button>
+    <script>
+      document.querySelectorAll("button").forEach((boton) => {
+        boton.addEventListener("click", () => {
+          if (boton.id == "yout") {
+            window.location.href = "https://www.youtube.com/";
+          } else if (boton.id == "gmail") {
+            window.location.href = "https://mail.google.com/mail/u/0/";
+          } else {
+            window.location.href = "https://3523.campusinstituto.com.ar/";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

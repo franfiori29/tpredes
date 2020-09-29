@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>KeyUP</title>
+  </head>
+  <body>
+    <form id="forma">
+      <div class="container">
+        <h2>Ejer validación de un INPUT</h2>
+        <div class="nombre">
+          <label>Ingrese el día del mes:</label><br />
+          <input type="number" id="dia" title="completa este campo" />
+        </div>
+        <div class="apellido">
+          <label>Ingrese el mes:</label><br />
+          <input type="number" id="mes" title="completa este campo" />
+        </div>
+      </div>
+      <div class="control">
+        <div>
+          <button id="enviar">Enviar</button>
+          <button id="blanquear">Reset</button>
+        </div>
+      </div>
+    </form>
+
+    <script>
+      document.getElementById("dia").addEventListener("keyup", () => {
+        if (
+          document.getElementById("dia").value > 31 ||
+          document.getElementById("dia").value <= 0
+        ) {
+          alert("El valor tiene que estar entre 1 y 31");
+        }
+      });
+
+      document.getElementById("mes").addEventListener("keyup", () => {
+        if (
+          document.getElementById("mes").value > 12 ||
+          document.getElementById("mes").value <= 0
+        ) {
+          alert("El valor tiene que estar entre 1 y 12");
+        }
+      });
+
+      document.getElementById("enviar").addEventListener("click", () => {
+        var result = confirm("Esta seguro de enviar??");
+        if (result) {
+          document.getElementById("forma").action =
+            "../js21_form_confirmacion/respuestaForm.html";
+          document.getElementById("forma").method = "get";
+          document.getElementById("forma").submit();
+        }
+      });
+
+      document.getElementById("blanquear").addEventListener("click", () => {
+        document.getElementById("forma").reset();
+      });
+    </script>
+  </body>
+</html>

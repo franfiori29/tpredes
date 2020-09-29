@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.est1 ul {
+  width: 70%;
+  height: 35%;
+  background-color: rgb(245, 233, 166);
+  color: white;
+  position: absolute;
+  border: solid black;
+  color: black;
+}
+
+.est2 ul {
+  width: 20%;
+  height: 25%;
+  background-color: rgb(114, 84, 250);
+  position: absolute;
+  border: rgb(114, 214, 240) ridge;
+  color: white;
+}
+
+.est3 ul {
+  width: 45%;
+  height: 55%;
+  background-color: rgb(241, 122, 245);
+  position: absolute;
+  border: rgb(195, 255, 172) ridge;
+}
+
+#control {
+  z-index: 1;
+  position: fixed;
+  left: 10%;
+  top: 50%;
+}

@@ -1,0 +1,21 @@
+.container {
+  padding: 2rem;
+  background-color: rgb(35, 255, 182);
+  width: 80%;
+  margin: auto;
+}
+
+.control {
+  padding: 2rem;
+  background-color: rgb(255, 228, 140);
+  width: 80%;
+  margin: auto;
+}
+#forma {
+  height: 40vh;
+  width: 50vw;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  z-index: 1;
+}

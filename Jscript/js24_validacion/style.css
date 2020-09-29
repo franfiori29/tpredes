@@ -1,0 +1,13 @@
+.container {
+  padding: 2rem;
+  background-color: rgb(255, 172, 133);
+  width: 80%;
+  margin: auto;
+}
+
+.control {
+  padding: 2rem;
+  background-color: rgb(146, 243, 137);
+  width: 80%;
+  margin: auto;
+}

@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.contenido {
+  background-color: rgb(243, 114, 114);
+  border: dotted black 4px;
+  float: left;
+  width: 33%;
+  display: block;
+  height: 20%;
+}
+
+button {
+  margin-top: 20px;
+  height: 35px;
+  width: 200px;
+}
+
+div.contenedor {
+  width: 50%;
+  margin: auto;
+  position: relative;
+  top: 10%;
+  background-color: rgb(127, 125, 247);
+  height: 50%;
+  padding: 1%;
+  overflow: auto;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Js28</title>
+  </head>
+  <body>
+    <form id="forma">
+      <div class="container">
+        <h2>Form ABM</h2>
+        <div class="nombre">
+          <label>Apellido:</label><br />
+          <input type="text" id="apellido" title="completa este campo" />
+        </div>
+        <div class="apellido">
+          <label>Nombres:</label><br />
+          <input type="text" id="nombres" title="completa este campo" />
+        </div>
+        <div class="apellido">
+          <label>Saldo:</label><br />
+          <input type="number" id="saldo" title="completa este campo" />
+        </div>
+      </div>
+      <div class="control">
+        <div>
+          <button id="resetear" disabled>Blanquear</button>
+          <button id="alta" class="check" disabled>Alta</button>
+          <button id="modi" class="check" disabled>Modi</button>
+          <button id="baja" class="check" disabled>Baja</button>
+        </div>
+      </div>
+    </form>
+
+    <script>
+      document.getElementById("forma").addEventListener("keyup", () => {
+        let apellido = document.getElementById("apellido").value;
+        let nombre = document.getElementById("nombres").value;
+        let saldo = document.getElementById("saldo").value;
+
+        if (apellido.length > 0 || nombre.length > 0 || String(saldo).length > 0) {
+          document.getElementById("resetear").disabled = false;
+        }
+
+        if (apellido.length > 0 && nombre.length > 0 && saldo >= 100) {
+          document.querySelectorAll(".check").forEach((boton) => {
+            boton.disabled = false;
+          });
+        }
+      });
+
+      document.getElementById("resetear").addEventListener("click", () => {
+        document.getElementById("forma").reset();
+      });
+    </script>
+    <div class="contenido">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, dignissimos
+        deserunt! Quo iure nemo quaerat facere similique. Natus, illo. Recusandae vel
+        odit dignissimos unde quae ipsam nihil adipisci doloremque id! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Vel, dignissimos deserunt! Quo
+        iure nemo quaerat facere similique. Natus, illo. Recusandae vel odit
+        dignissimos unde quae ipsam nihil adipisci doloremque id!
+      </p>
+    </div>
+  </body>
+</html>

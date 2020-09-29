@@ -1,0 +1,36 @@
+.container {
+  padding: 2rem;
+  background-color: rgb(255, 154, 233);
+  width: 90%;
+  margin-bottom: 2rem;
+  margin: auto;
+}
+
+.control {
+  padding: 2rem;
+  background-color: rgb(143, 241, 172);
+  width: 90%;
+  margin-bottom: 2rem;
+  margin: auto;
+}
+
+.nombre {
+  padding-bottom: 1rem;
+}
+
+.apellido {
+  padding-bottom: 1rem;
+}
+
+.fecha {
+  padding-bottom: 1rem;
+}
+#presentar {
+  width: 90%;
+  margin: auto;
+}
+table {
+  border-collapse: collapse;
+  border: solid;
+  width: 40%;
+}

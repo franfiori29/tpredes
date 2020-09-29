@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Js30</title>
+  </head>
+  <body>
+    <h2>Cambios de estilo dinamicamente</h2>
+    <div id="container">
+      <ul>
+        <h3>Lista con estilo</h3>
+        <li>Texto1</li>
+        <li>Texto2</li>
+        <li>Texto3</li>
+      </ul>
+    </div>
+
+    <div id="control">
+      <button id="estilo1">Estilo 1</button>
+      <button id="estilo2">Estilo 2</button>
+      <button id="estilo3">Estilo 3</button>
+      <button id="estilo4">Sin Estilo</button>
+    </div>
+    <script>
+      document.getElementById("estilo1").addEventListener("click", () => {
+        document.getElementById("container").className = "est1";
+      });
+
+      document.getElementById("estilo2").addEventListener("click", () => {
+        document.getElementById("container").className = "est2";
+      });
+      document.getElementById("estilo3").addEventListener("click", () => {
+        document.getElementById("container").className = "est3";
+      });
+      document.getElementById("estilo4").addEventListener("click", () => {
+        document.getElementById("container").className = "est4";
+      });
+    </script>
+  </body>
+</html>

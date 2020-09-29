@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Js31</title>
+  </head>
+  <body>
+    <div class="botones">
+      <button id="crear">Crear</button>
+      <button id="limpiar">Limpiar</button>
+      <button id="info">Info</button>
+    </div>
+
+    <div id="contenedor" class="contenedor"></div>
+
+    <script>
+      document.getElementById("crear").addEventListener("click", () => {
+        let agregarElem = document.createElement("div");
+        let divContenido = `<h1>Elemento Creado: ${
+          document.getElementById("contenedor").childNodes.length + 1
+        } </h1>`;
+        agregarElem.className = "contenido";
+        agregarElem.innerHTML = divContenido;
+
+        document.getElementById("contenedor").appendChild(agregarElem);
+      });
+
+      document.getElementById("limpiar").addEventListener("click", () => {
+        if (document.getElementById("contenedor").childNodes.length != 0) {
+          document.getElementById("contenedor").innerHTML = "";
+        }
+      });
+
+      document.getElementById("info").addEventListener("click", () => {
+        var largoArray = document.getElementById("contenedor").childNodes.length;
+        alert(`Hay ${largoArray} elementos`);
+      });
+    </script>
+  </body>
+</html>
