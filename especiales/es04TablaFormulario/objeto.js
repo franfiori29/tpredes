@@ -5,8 +5,6 @@ let articulosObjeto = JSON.parse(articulosJSON);
 
 let cuerpoTabla = document.getElementById("tbody");
 
-document.getElementById("crear").addEventListener("click", mostrarDatos);
-
 function mostrarDatos() {
   articulosObjeto.articulos.forEach((artic) => {
     let filaTabla = document.createElement("tr");
@@ -30,13 +28,14 @@ function mostrarDatos() {
 const ocultarTabla = () => {
   $("#tbody").empty();
 };
+
+document.getElementById("crear").addEventListener("click", mostrarDatos);
 document.getElementById("reset").addEventListener("click", ocultarTabla);
 
 let interno = document.getElementById("contenedor-interno");
 let contenedor = document.getElementById("contenedor");
 
 const mostrarForm = () => {
-  console.log("entro-formulario");
   interno.style.display = "block";
   contenedor.style.pointerEvents = "none";
   contenedor.style.opacity = 0.3;
