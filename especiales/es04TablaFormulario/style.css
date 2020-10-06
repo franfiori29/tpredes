@@ -94,18 +94,14 @@ button:focus {
 }
 
 .cerrar {
-  background: #606061;
   color: #ffffff;
   padding: 0.5%;
   text-decoration: none;
   position: absolute;
-  right: 0px;
+  right: 3%;
   top: 0px;
   width: 24px;
   font-weight: bold;
-}
-.cerrar:hover {
-  background: #1aa6b7;
 }
 #btn {
   background-color: #1aa6b7;
@@ -119,7 +115,7 @@ button:focus {
 #contenedor-interno {
   position: fixed;
   top: 0;
-  right: 0;
+  right: 3;
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.8);
