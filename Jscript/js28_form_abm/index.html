@@ -48,6 +48,13 @@
             boton.disabled = false;
           });
         }
+        if (
+          apellido.length == 0 &&
+          nombre.length == 0 &&
+          String(saldo).length == 0
+        ) {
+          document.getElementById("resetear").disabled = true;
+        }
       });
 
       document.getElementById("resetear").addEventListener("click", () => {

@@ -1,0 +1,34 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Especial 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="contenedor">
+      <header>Formulario</header>
+      <main>
+        <form
+          action="../../Jscript/js21_form_confirmacion/respuestaForm.html"
+          target="_blank"
+          id="formulario"
+        >
+          <label for="cod">Código Artículo:</label>
+          <input type="number" name="cod" id="cod" required />
+          <label for="listaArt">Tipo de Articulo:</label>
+          <select name="listaArt" id="listaArt" required></select>
+          <label for="desc">Descripción:</label>
+          <input type="text" name="desc" id="desc" />
+          <label for="fecha">Fecha Alta:</label>
+          <input type="date" name="fecha" id="fecha" required />
+          <label for="stock">Stock:</label>
+          <input type="number" name="stock" id="stock" required />
+          <input type="submit" value="ENVIAR" id="boton" />
+        </form>
+      </main>
+      <footer>Supermercado "El Babu"</footer>
+    </div>
+    <script src="./objeto.js"></script>
+  </body>
+</html>
