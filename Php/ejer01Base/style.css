@@ -1,0 +1,10 @@
+span {
+  color: blue;
+}
+
+td {
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid black;
+  padding: 2px;
+}
