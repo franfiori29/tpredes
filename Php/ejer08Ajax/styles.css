@@ -1,0 +1,28 @@
+html,
+body {
+  background-color: rgb(205, 255, 248);
+  color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+section {
+  position: relative;
+  top: 30vh;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.input {
+  background-color: rgb(102, 162, 252);
+}
+.output {
+  background-color: rgb(172, 119, 246);
+}
+
+.estado {
+  background-color: rgb(243, 118, 118);
+}

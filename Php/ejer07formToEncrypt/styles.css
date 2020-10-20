@@ -1,0 +1,35 @@
+html,
+body {
+  background-color: rgb(195, 223, 255);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+section {
+  width: 50%;
+  margin: auto;
+  position: relative;
+  top: 30vh;
+  padding: 20px 0;
+  text-align: center;
+  font-weight: 900;
+  font-size: large;
+  letter-spacing: 1px;
+}
+
+#boton,
+input {
+  border-radius: 20px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
+  font-weight: 900;
+  font-size: large;
+  letter-spacing: 1px;
+}
+
+#boton {
+  background-color: rgb(155, 255, 247);
+}

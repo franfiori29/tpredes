@@ -1,0 +1,15 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+}
+label,
+input {
+  width: 100%;
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+}
