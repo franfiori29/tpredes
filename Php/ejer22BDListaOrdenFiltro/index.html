@@ -24,16 +24,27 @@
     <main>
       <table>
         <thead>
-          <tr>
-            <td>CodArt</td>
-            <td>Descripción</td>
-            <td>Stock</td>
-            <td>Tipo de Articulo</td>
-            <td>Fecha Alta</td>
-            <td>Perecedero</td>
+          <tr id="eventos">
+            <td id="Id">CodArt</td>
+            <td id="Descripcion">Descripción</td>
+            <td id="Stock">Stock</td>
+            <td id="Tipo">Tipo de Articulo</td>
+            <td id="FechaAlta">Fecha Alta</td>
+            <td id="Perecedero">Perecedero</td>
           </tr>
         </thead>
-        <tbody id="tbody"></tbody>
+        <tbody id="tbodyinputs">
+          <tr id="eventos">
+            <td><input type="text" class="filtro" name="Id"></td>
+            <td><input type="text" class="filtro" name="Descripcion"></td>
+            <td><input type="text" class="filtro" name="Stock"></td>
+            <td><input type="text" class="filtro" name="Tipo"></td>
+            <td><input type="text" class="filtro" name="FechaAlta"></td>
+            <td><input type="text" class="filtro" name="Perecedero"></td>
+          </tr>
+        </tbody>
+        <tbody id="tbody">
+        </tbody>
         <tfoot>
           <tr>
             <td>codArt</td>

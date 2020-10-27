@@ -1,11 +1,11 @@
 $(document).ready(function () {
-    $("#crear").click(function () {
+    $("#crear").click(function (event) {
         $("#tbody").empty();
         $("#tbody").html("Esperando respuesta del servidor....");
         $.ajax({
             method: "GET",
             url: "salidaJsonArticulos.php",
-            data: { string: "saldoStock" },
+            data: { string: "Stock" },
         })
             .done(function (response, status, jqXHR) {
                 $("#tbody").empty();
@@ -54,3 +54,31 @@ const ocultarTabla = () => {
 document.getElementById("reset").addEventListener("click", ocultarTabla);
 
 
+$(document).ready(function () {
+    $("#eventos").click(function (event) {
+        let orden = (event.target.id);
+        $("#inputOrden").val(orden);
+        $("#tbody").empty();
+        $("#tbody").html("Esperando respuesta del servidor....");
+        $.ajax({
+            method: "GET",
+            url: "salidaJsonArticulos.php",
+            data: { string: orden },
+        })
+            .done(function (response, status, jqXHR) {
+                $("#tbody").empty();
+
+                let formattedResponse = JSON.parse(response);
+
+                mostrarDatos(formattedResponse);
+            })
+            .fail(function (jqXHR, status, error) {
+                $("#estado").html(
+                    "<strong>Status:</strong> " +
+                    status +
+                    "<br><strong>Error:</strong> " +
+                    error
+                );
+            });
+    });
+});

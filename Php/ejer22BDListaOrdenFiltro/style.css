@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.contenedor {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+table {
+  width: 100vw;
+  height: 80vh;
+  border-collapse: collapse;
+  border: none;
+  text-align: center;
+}
+
+header,
+footer {
+  width: 100vw;
+  height: 10vh;
+  background-color: #ffffff;
+  color: #f32d2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.titulo,
+.botones {
+  width: 50vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.botones button {
+  height: 7vh;
+  width: 15vw;
+  font-size: 1em;
+  color: #ff2020;
+  background-color: #ffffff;
+  border-radius: 40px;
+  border: 4px solid red;
+}
+
+thead,
+tfoot,
+tbody {
+  display: block;
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  width: 100vw;
+  height: 10vh;
+  background-color: #ffffff;
+  color: #ff0202;
+  display: flex;
+  align-items: center;
+}
+
+thead td,
+tfoot td {
+  width: 16.6vw;
+  padding: 15px;
+  border: 2px solid #ff0000;
+}
+
+tbody {
+  height: 55vh;
+  overflow-y: auto;
+}
+
+tbody td {
+  width: 16.6vw;
+}
+
+.articulos-tr {
+  background-color: #ffffff;
+}
+
+.articulos-td {
+  padding: 10px;
+  color: #ff0000;
+}
+button:focus {
+  outline-width: 0;
+}
+
+#tbodyinputs{
+  height: 5vh;
+}
+#tbodyinputs td input{
+  height: 100%;
+}

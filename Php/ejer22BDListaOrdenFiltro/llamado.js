@@ -1,11 +1,13 @@
 $(document).ready(function () {
-    $("#crear").click(function () {
+    $("#crear").click(function (event) {
         $("#tbody").empty();
         $("#tbody").html("Esperando respuesta del servidor....");
+        let inputs = getInputValues();
+        inputs["string"] = "Stock";
         $.ajax({
             method: "GET",
             url: "salidaJsonArticulos.php",
-            data: { string: "saldoStock" },
+            data: inputs,
         })
             .done(function (response, status, jqXHR) {
                 $("#tbody").empty();
@@ -54,3 +56,42 @@ const ocultarTabla = () => {
 document.getElementById("reset").addEventListener("click", ocultarTabla);
 
 
+$(document).ready(function () {
+    $("#eventos").click(function (event) {
+        let orden = (event.target.id);
+        $("#inputOrden").val(orden);
+        $("#tbody").empty();
+        $("#tbody").html("Esperando respuesta del servidor....");
+
+        $.ajax({
+            method: "GET",
+            url: "salidaJsonArticulos.php",
+            data: { string: orden },
+        })
+            .done(function (response, status, jqXHR) {
+                $("#tbody").empty();
+
+                let formattedResponse = JSON.parse(response);
+
+                mostrarDatos(formattedResponse);
+            })
+            .fail(function (jqXHR, status, error) {
+                $("#estado").html(
+                    "<strong>Status:</strong> " +
+                    status +
+                    "<br><strong>Error:</strong> " +
+                    error
+                );
+            });
+    });
+});
+
+const getInputValues = () => {
+    let nodo = document.getElementsByClassName("filtro");
+    let objeto = {}
+    for (let i = 0; i < nodo.length; i++) {
+        objeto[nodo[i].name] = nodo[i].value;
+    }
+    return objeto
+}
+getInputValues()
