@@ -5,6 +5,11 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#formAlta, #formModi {
+    display: none;
+}
+
+
 body{
     width: 100%;
     background-color:#ffffff ;

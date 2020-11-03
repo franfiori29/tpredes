@@ -7,6 +7,31 @@ $("#altaValidar").click(Alta);
 $("#botonCerrarModif").click(cerrarModif);
 $("#modiValidar").click(hacerUpdate);
 
+$("#thIdEmpleado").click(function () {
+    $("#orden").val("idEmpleado");
+    hacerTabla();
+});
+$("#thEmplApe").click(function () {
+    $("#orden").val("apellido");
+    hacerTabla();
+});
+$("#thEmplTel").click(function () {
+    $("#orden").val("telefono");
+    hacerTabla();
+});
+$("#thEmplArea").click(function () {
+    $("#orden").val("area");
+    hacerTabla();
+});
+$("#thEmplNombre").click(function () {
+    $("#orden").val("nombre");
+    hacerTabla();
+});
+$("#thEmplFA").click(function () {
+    $("#orden").val("fechaAlta");
+    hacerTabla();
+});
+
 function hacerTabla() {
     $("#contenidoTabla").empty();
     $("#contenidoTabla").html("<p>Aguardando respuesta del servidor....></p>")
@@ -165,12 +190,6 @@ function hacerUpdate() {
     actualizarEmpleado(valorACambiar);
 };
 
-
-$(document).ready(function () {
-    $("#formAlta").css("display", "none");
-    $("#formModi").css("display", "none");
-});
-
 function abrirAlta() {
     $("#formAlta").css("display", "block");
     $("#doc").addClass("modalDesactivado");
@@ -192,11 +211,11 @@ function abrirModalModi() {
     $("#formModi").css("display", "block");
     var i = this.document.activeElement.getAttribute("class");
     valorACambiar = i;
-    completarFichaModi(i);
+    envioModificacion(i);
     $("#doc").addClass("modalDesactivado");
 };
 
-function completarFichaModi(idEmpleado) {
+function envioModificacion(idEmpleado) {
     $("#formModi").val(idEmpleado);
     var objAjax = $.ajax({
         type: "get",
@@ -217,43 +236,6 @@ function completarFichaModi(idEmpleado) {
 
 $("#delete").click(function () {
     $("#contenidoTabla").empty();
-});
-
-$(document).ready(function () {
-    $("#thIdEmpleado").click(function () {
-        $("#orden").val("idEmpleado");
-        hacerTabla();
-    });
-});
-$(document).ready(function () {
-    $("#thEmplApe").click(function () {
-        $("#orden").val("apellido");
-        hacerTabla();
-    });
-});
-$(document).ready(function () {
-    $("#thEmplTel").click(function () {
-        $("#orden").val("telefono");
-        hacerTabla();
-    });
-});
-$(document).ready(function () {
-    $("#thEmplArea").click(function () {
-        $("#orden").val("area");
-        hacerTabla();
-    });
-});
-$(document).ready(function () {
-    $("#thEmplNombre").click(function () {
-        $("#orden").val("nombre");
-        hacerTabla();
-    });
-});
-$(document).ready(function () {
-    $("#thEmplFA").click(function () {
-        $("#orden").val("fechaAlta");
-        hacerTabla();
-    });
 });
 
 $.fn.isValid = function () {
