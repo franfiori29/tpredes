@@ -32,6 +32,7 @@ function mostrarDatos(articulosObjeto) {
     articulosObjeto.forEach((artic) => {
         let filaTabla = document.createElement("tr");
         filaTabla.setAttribute("class", "articulos-tr");
+        filaTabla.setAttribute("scope", "row");
 
         for (let categ in artic) {
             let nuevaFila = document.createElement("td");
