@@ -1,5 +1,5 @@
 
-$("#load").click(cargaTabla);
+$("#load").click(hacerTabla);
 $("#altaEmpleado").click(abrirAlta);
 $("#botonCerrarModal").click(cerrarAlta);
 $("#formAlta").change(validAlta);
@@ -7,7 +7,7 @@ $("#altaValidar").click(Alta);
 $("#botonCerrarModif").click(cerrarModif);
 $("#modiValidar").click(hacerUpdate);
 
-function cargaTabla() {
+function hacerTabla() {
     $("#contenidoTabla").empty();
     $("#contenidoTabla").html("<p>Aguardando respuesta del servidor....></p>")
     var objAjax = $.ajax({
@@ -104,8 +104,8 @@ function Alta() {
                 fechaAlta: $("#altaFechaAlta").val()
             },
             success: function () {
-                cargaTabla();
-                cargaTabla();
+                hacerTabla();
+                hacerTabla();
                 cerrarAlta()
 
             }
@@ -124,8 +124,8 @@ function borrar(idEmpleado) {
                 idEmpleado: idEmpleado
             },
             success: function () {
-                cargaTabla();
-                cargaTabla();
+                hacerTabla();
+                hacerTabla();
             }
         })
     } else {
@@ -152,7 +152,7 @@ function actualizarEmpleado(idEmpleado) {
                 fechaAlta: $("#modiFechaAlta").val()
             },
             success: function () {
-                cargaTabla();
+                hacerTabla();
                 cerrarModif();
             }
         })
@@ -222,37 +222,37 @@ $("#delete").click(function () {
 $(document).ready(function () {
     $("#thIdEmpleado").click(function () {
         $("#orden").val("idEmpleado");
-        cargaTabla();
+        hacerTabla();
     });
 });
 $(document).ready(function () {
     $("#thEmplApe").click(function () {
         $("#orden").val("apellido");
-        cargaTabla();
+        hacerTabla();
     });
 });
 $(document).ready(function () {
     $("#thEmplTel").click(function () {
         $("#orden").val("telefono");
-        cargaTabla();
+        hacerTabla();
     });
 });
 $(document).ready(function () {
     $("#thEmplArea").click(function () {
         $("#orden").val("area");
-        cargaTabla();
+        hacerTabla();
     });
 });
 $(document).ready(function () {
     $("#thEmplNombre").click(function () {
         $("#orden").val("nombre");
-        cargaTabla();
+        hacerTabla();
     });
 });
 $(document).ready(function () {
     $("#thEmplFA").click(function () {
         $("#orden").val("fechaAlta");
-        cargaTabla();
+        hacerTabla();
     });
 });
 
