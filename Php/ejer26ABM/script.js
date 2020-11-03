@@ -84,7 +84,7 @@ function hacerTabla() {
                 tdPDF.innerHTML = "<button>Pdf</button>";
 
                 var tdMod = document.createElement("td");
-                tdMod.innerHTML = `<button id='modi' class='${value.idEmpleado}'onclick='abrirModalModi()'>MODIFICAR</button>`;
+                tdMod.innerHTML = `<button id='modi' class='${value.idEmpleado}'onclick='abrirModif()'>MODIFICAR</button>`;
 
                 var tdBaja = document.createElement("td");
                 tdBaja.innerHTML = `<button id='baja' class='${value.idEmpleado}'onclick='hacerBorrado()'>BORRAR</button>`;
@@ -130,8 +130,7 @@ function Alta() {
             },
             success: function () {
                 hacerTabla();
-                hacerTabla();
-                cerrarAlta()
+                cerrarAlta();
 
             }
         })
@@ -149,7 +148,6 @@ function borrar(idEmpleado) {
                 idEmpleado: idEmpleado
             },
             success: function () {
-                hacerTabla();
                 hacerTabla();
             }
         })
@@ -207,7 +205,7 @@ function cerrarModif() {
 
 var valorACambiar;
 
-function abrirModalModi() {
+function abrirModif() {
     $("#formModi").css("display", "block");
     var i = this.document.activeElement.getAttribute("class");
     valorACambiar = i;

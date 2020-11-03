@@ -49,7 +49,7 @@ table button {
 
 table{
     width: 100%;
-    height: 70vh;    
+    height: 80vh;    
     border-collapse: collapse;    
 }
 
@@ -259,6 +259,7 @@ tfoot tr {
 
 tfoot td {
     width: 11vw ;
+    text-align: center;
 }
 
 @media (max-width:1000px){
