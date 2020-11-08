@@ -1,0 +1,53 @@
+* {
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header,footer {
+    height: 10vh;
+    background-color: red;
+    text-align: center;
+}
+
+main {
+    height: 80vh;
+    background-color: aqua;
+}
+
+main{
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.divFormularioAlta, .divFormularioModi{
+    display: none;
+    position: absolute;
+    top: 20%;
+    right: 40%;
+}
+
+#ventanaModalPdf {
+    display: none;
+    position: absolute;
+    top: 0%;
+    right: 10%;
+}
+
+#contenidoModalPDF {
+    width: 80vw;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: rgb(248, 159, 159)
+}
+
+button {
+    cursor: pointer
+}
+
+#botonCerrarPdf:hover {
+    cursor: pointer;
+}
