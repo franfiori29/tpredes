@@ -30,5 +30,4 @@ while ($fila = $resultado->fetch_assoc()) {
 $mysqli->close();
 $salidaJson = json_encode($objEmpleado);
 
-
 echo $salidaJson;

@@ -1,32 +1,43 @@
 
-
-
 $("#load").click(hacerTabla);
 $("#altaEmpleado").click(abrirAlta);
 $("#botonCerrarAlta").click(cerrarAlta);
 $("#formAlta input").keyup(validAlta);
 $("#formModi input").keyup(validModi);
 $("#botonCerrarModif").click(cerrarModif);
-$("#botonCerrarPdf").click(cerrarPdf)
-$("#modiValidar").click(hacerUpdate);
+$("#botonCerrarPdf").click(cerrarPdf);
+
 
 $(function () {
     $("#formAlta").on("submit", function (e) {
-        if (confirm("Esta Seguro que quiere dar de alta?")) {
+        if (confirm("¿Está seguro que quiere dar este usuario de alta?")) {
             e.preventDefault();
-            var formData = new FormData(document.getElementById("formAlta"));
-            formData.get("altaPdf").name == "" ? formData.delete("altaPdf") : null;
-            $.ajax({
-                url: "alta.php",
-                type: "post",
-                dataType: "html",
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function () {
-                    hacerTabla();
-                    cerrarAlta();
+            let empleadoID = $("#altaID").val();
+            $.get({
+                url: "modi.php",
+                data: {
+                    idEmpleado: empleadoID
+                }
+            }).done(function (res) {
+                res = JSON.parse(res);
+                if (res.idEmpleado) {
+                    alert("Ya existe un usuario con ese ID")
+                } else {
+                    var formData = new FormData(document.getElementById("formAlta"));
+                    formData.get("altaPdf").name == "" ? formData.delete("altaPdf") : null;
+                    $.ajax({
+                        url: "alta.php",
+                        type: "post",
+                        dataType: "html",
+                        data: formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: function () {
+                            hacerTabla();
+                            cerrarAlta();
+                        }
+                    })
                 }
             })
         }
@@ -202,31 +213,41 @@ $(function () {
     $("#formModi").on("submit", function (e) {
         if (confirm("Esta Seguro que quiere modificar este usuario?")) {
             e.preventDefault();
-            var formData = new FormData(document.getElementById("formModi"));
-            $.ajax({
-                url: "update.php",
-                type: "post",
-                dataType: "html",
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function () {
-                    hacerTabla();
-                    cerrarModif()
+            let empleadoID = $("#modiID").val();
+            $.get({
+                url: "modi.php",
+                data: {
+                    idEmpleado: empleadoID
+                }
+            }).done(function (res) {
+                res = JSON.parse(res);
+                if (res.idEmpleado && res.idEmpleado != valorACambiar) {
+                    alert("Ya existe un usuario con ese ID")
+                }
+                else {
+                    var formData = new FormData(document.getElementById("formModi"));
+                    $.ajax({
+                        url: "update.php",
+                        type: "post",
+                        dataType: "html",
+                        data: formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: function () {
+                            hacerTabla();
+                            cerrarModif();
+                        }
+                    })
                 }
             })
-        }
-        else {
+        } else {
             alert("Se ha cancelado la modificación");
         };
     })
     $(".divFormularioModi").css("display", "none");
 });
 
-function hacerUpdate() {
-    actualizarEmpleado(valorACambiar);
-};
 
 function abrirAlta() {
     $(".divFormularioAlta").css("display", "block");
@@ -240,6 +261,7 @@ function cerrarAlta() {
     $("table, header").css("pointerEvents", "auto");
     $("table, header,footer").css("opacity", 1);
     $("#doc").removeClass("modalDesactivado");
+    $("#formAlta").trigger("reset");
 };
 
 function cerrarModif() {
@@ -305,10 +327,11 @@ function esValidoString(input) {
 function esValidoTelefono(input) {
     let valorInput = input.val()
     if (!valorInput) return false
-    let reg = new RegExp("^[0-9]{8,10}$")
+    let reg = new RegExp("^[0-9]{8,11}$")
     return reg.test(valorInput) ? true : false;
 }
 
-
+$("#formModi input").change(validModi);
+$("#formAlta input").change(validAlta);
 
 
