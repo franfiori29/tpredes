@@ -15,9 +15,10 @@
         </div>
 
         <div class="filtro">
-            <label for="" id="order">Orden:</label>
+            <label for="" id="order">Orden:</label><br>
             <input type="text" id="orden" name="orden" placeholder="idEmpleado" readonly value="idEmpleado">
         </div>
+
         <div class="divBotones">
             <button id="load">Cargar</button>
             <button id="delete">Vaciar</button>
@@ -30,11 +31,11 @@
                 <tr>
                     <th id="thIdEmpleado"><a href="#"> Id Empleado</a></th>
                     <th id="thEmplApe"><a href="#">Apellido</a></th>
-                    <th id="thEmplNombre"><a href="#">Nombre</a></th>
-                    <th id="thEmplTel"><a href="#">Telefono</a></th>
-                    <th id="thEmplArea"><a href="#">Área</a></th>
-                    <th id="thEmplFA"><a href="#">Fecha de Alta</a></th>
-                    <th id="thPdf">PDF</th>
+                    <th id="thEmplNombre" class="celu"><a href=" #">Nombre</a></th>
+                    <th id="thEmplTel" class="celu"><a href="#">Telefono</a></th>
+                    <th id="thEmplArea" class="tablet"><a href="#">Área</a></th>
+                    <th id="thEmplFA" class="tablet"><a href="#">Fecha de Alta</a></th>
+                    <th id="thPdf" class="tablet">PDF</th>
                     <th id="thModis">Modificar</th>
                     <th id="thBajas">Borrar</th>
                 </tr>
@@ -49,11 +50,18 @@
                     <th class="celu">
                         <input id="filtroNombre" type="text">
                     </th>
-                    <th class="tablet">
+                    <th class="celu">
                         <input id="filtroTelefono" type="text">
                     </th>
-                    <th class="celu">
-                        <input id="filtroArea" type="text">
+                    <th class="tablet">
+                        <select name="filtroArea" id="filtroArea">
+                            <option value="" selected></option>
+                            <option value="RRHH">RRHH</option>
+                            <option value="Ventas">Ventas</option>
+                            <option value="Limpieza">Limpieza</option>
+                            <option value="Seguridad">Seguridad</option>
+                            <option value="Ventas">Ventas</option>
+                        </select>
                     </th>
                     <th class="tablet">
                         <input id="filtroFechaAlta" type="text">
@@ -71,7 +79,7 @@
                 <tr>
                     <td><b>Id Empleado</b></td>
                     <td><b>Apellido</b></td>
-                    <td class="celu"><b>ombre</b></td>
+                    <td class="celu"><b>Nombre</b></td>
                     <td class="celu"><b>Telefono</b></td>
                     <td class="tablet"><b>Área</b></td>
                     <td class="tablet"><b>Fecha de Alta</b></td>
@@ -98,11 +106,17 @@
                 <br>
                 <label for="altaTelefono">Telefono</label>
                 <br>
-                <input type="number" name="altaTelefono" required id="altaTelefono" min="0">
+                <input type="number" name="altaTelefono" required id="altaTelefono" min="30000000">
                 <br>
-                <label for="altaArea">Area</label>
+                <label for="alteArea">Area: </label>
                 <br>
-                <input type="text" name="altaArea" required id="altaArea">
+                <select name="altaArea">
+                    <option value="RRHH">RRHH</option>
+                    <option value="Ventas" selected>Ventas</option>
+                    <option value="Limpieza">Limpieza</option>
+                    <option value="Seguridad">Seguridad</option>
+                    <option value="Ventas">Ventas</option>
+                </select>
                 <br>
                 <label for="altaNombre">Nombre</label>
                 <br>
@@ -114,9 +128,9 @@
                 <br>
                 <label for="altaPdf">PDF: </label>
                 <br>
-                <input type="file" name="altaPdf">
+                <input type="file" name="altaPdf" id="altaPdf">
                 <br>
-                <input type="submit" value="altaUsuario" id="altaValidar" disabled>
+                <input type="submit" value="ALTA USUARIO" id="altaValidar" disabled>
             </form>
         </div>
         <div class="divFormularioModi">
@@ -136,10 +150,17 @@
                 <label for="modiTelefono">Teléfono</label>
                 <br>
                 <input type="number" name="modiTelefono" required id="modiTelefono">
-
+                <br>
                 <label for="modiArea">Area</label>
                 <br>
-                <input type="text" name="modiArea" id="modiArea">
+                <select name="modiArea" id="modiArea">
+                    <option value="RRHH">RRHH</option>
+                    <option value="Ventas">Ventas</option>
+                    <option value="Limpieza">Limpieza</option>
+                    <option value="Seguridad">Seguridad</option>
+                    <option value="Ventas">Ventas</option>
+                    <option value="Atención">Atención</option>
+                </select>
                 <br>
                 <label for="modiNombre">Nombre</label>
                 <br>
@@ -153,12 +174,12 @@
                 <br>
                 <input type="file" name="modiPdf">
                 <br>
-                <input type="submit">
+                <input type="submit" id="modiValidar" disabled>
             </form>
         </div>
 
         <div id="ventanaModalPdf">
-            <div class="encabezadoModalPdf">
+            <div class="encabezadoModal">
                 <div>Encabezado Formulario de Alta</div>
                 <button id="botonCerrarPdf"><a>X</a></button>
             </div>
@@ -166,158 +187,9 @@
         </div>
     </main>
     <footer>
-        <h1>FOOTER</h1>
+        <div id="piePagina">Pie de página</div>
     </footer>
 
-    <!-- <div id="doc">
-        <div class="top">
-            <div class="divEmpleados">
-                <div>Empleados</div>
-            </div>
-
-            <div class="filtro">
-                <label for="" id="order">Orden:</label>
-                <input type="text" id="orden" name="orden" placeholder="idEmpleado" readonly value="idEmpleado">
-            </div>
-            <div class="divBotones">
-                <button id="load">Cargar</button>
-                <button id="delete">Vaciar</button>
-                <button id="altaEmpleado">Alta</button>
-            </div>
-        </div>
-
-        <div class="contenedorTabla">
-            <table>
-                <thead>
-                    <tr>
-                        <th id="thIdEmpleado"><a href="#"> Id Empleado</a></th>
-                        <th id="thEmplApe"><a href="#">Apellido</a></th>
-                        <th id="thEmplNombre"><a href="#">Nombre</a></th>
-                        <th id="thEmplTel"><a href="#">Telefono</a></th>
-                        <th id="thEmplArea"><a href="#">Área</a></th>
-                        <th id="thEmplFA"><a href="#">Fecha de Alta</a></th>
-                        <th id="thPdf">PDF</th>
-                        <th id="thModis">Modificar</th>
-                        <th id="thBajas">Borrar</th>
-                    </tr>
-
-                    <tr id="inputsFiltro">
-                        <th>
-                            <input id="filtroIdEmpleado" type="text">
-                        </th>
-                        <th>
-                            <input id="filtroApellido" type="text">
-                        </th>
-                        <th class="celu">
-                            <input id="filtroTelefono" type="text">
-                        </th>
-                        <th class="tablet">
-                            <input id="filtroArea" type="text">
-                        </th>
-                        <th class="celu">
-                            <input id="filtroNombre" type="text">
-                        </th>
-                        <th class="tablet">
-                            <input id="filtroFechaAlta" type="text">
-                        </th>
-                        <th class="tablet"></th>
-                        <th></th>
-                        <th></th>
-
-                    </tr>
-                </thead>
-
-                <tbody id="contenidoTabla"></tbody>
-
-                <tfoot>
-                    <tr>
-                        <td>Id Empleado</td>
-                        <td>Apellido</td>
-                        <td class="celu">Nombre</td>
-                        <td class="celu">Telefono</td>
-                        <td class="tablet">Área</td>
-                        <td class="tablet">Fecha de Alta</td>
-                        <td class="tablet">PDF</td>
-                        <td>Modificar</td>
-                        <td>Borrar</td>
-                    </tr>
-                </tfoot>
-
-            </table>
-        </div>
-        <footer>Pie de página</footer>
-    </div>
-
-    <div class="formularioAlta" id="formModi">
-        <div class="encabezadoModal">
-            <header>Encabezado Formulario de Modificación</header>
-            <button id="botonCerrarModif">X</button>
-        </div>
-        <div class="col1">
-            <label for="modiID">ID Empleado</label>
-            <br>
-            <input type="number" name="modiID" required id="modiID">
-            <br>
-            <label for="modiApellido">Apellido</label>
-            <br>
-            <input type="text" name="modiApellido" requiered id="modiApellido">
-            <br>
-            <label for="modiTelefono">Teléfono</label>
-            <br>
-            <input type="number" name="modiTelefono" required id="modiTelefono">
-        </div>
-
-        <div class="col2">
-            <label for="modiArea">Area</label>
-            <br>
-            <input type="text" name="modiArea" id="modiArea">
-            <br>
-            <label for="modiNombre">Nombre</label>
-            <br>
-            <input type="text" name="modiNombre" id="modiNombre">
-            <br>
-            <label for="modiFechaAta">Fecha de Alta</label>
-            <br>
-            <input type="datetime" name="modiFechaAlta" id="modiFechaAlta">
-        </div>
-        <button id="modiValidar" class="validButton">Enviar Modi</button>
-    </div>
-
-
-    <div class="formularioAlta" id="formAlta">
-        <div class="encabezadoModal">
-            <header>Encabezado Formulario Alta</header>
-            <button id="botonCerrarModal">X</button>
-        </div>
-        <div class="col1">
-            <label for="altaID">Id Empleado</label>
-            <br>
-            <input type="number" name="altaID" required id="altaID" min="0">
-            <br>
-            <label for="altaApellido">Apellido</label>
-            <br>
-            <input type="text" name="altaApellido" requiered id="altaApellido">
-            <br>
-            <label for="altaTelefono">Telefono</label>
-            <br>
-            <input type="number" name="altaTelefono" required id="altaTelefono" min="0">
-        </div>
-
-        <div class="col2">
-            <label for="altaArea">Area</label>
-            <br>
-            <input type="text" name="altaArea" required id="altaArea">
-            <br>
-            <label for="altaNombre">Nombre</label>
-            <br>
-            <input type="text" name="altaNombre" required id="altaNombre">
-            <br>
-            <label for="altaFechaAlta">Fecha de alta</label>
-            <br>
-            <input type="date" required name="altaFechaAlta" id="altaFechaAlta">
-        </div>
-        <button id="altaValidar" class="validButton" disabled>Enviar Alta</button>
-    </div> -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>

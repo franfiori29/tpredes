@@ -23,6 +23,7 @@ while ($fila = $resultado->fetch_assoc()) {
     $objEmpleado->area = $fila['area'];
     $objEmpleado->nombre = $fila['nombre'];
     $objEmpleado->fechaAlta = $fila['fechaAlta'];
+    $objEmpleado->pdf = base64_encode($fila['pdf']);
 
     array_push($empleado, $objEmpleado);
 }

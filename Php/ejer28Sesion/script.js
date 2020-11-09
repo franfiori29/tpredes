@@ -4,8 +4,8 @@
 $("#load").click(hacerTabla);
 $("#altaEmpleado").click(abrirAlta);
 $("#botonCerrarAlta").click(cerrarAlta);
-$("#formAlta").change(validAlta);
-// $("#altaValidar").click(Alta);
+$("#formAlta input").keyup(validAlta);
+$("#formModi input").keyup(validModi);
 $("#botonCerrarModif").click(cerrarModif);
 $("#botonCerrarPdf").click(cerrarPdf)
 $("#modiValidar").click(hacerUpdate);
@@ -15,6 +15,7 @@ $(function () {
         if (confirm("Esta Seguro que quiere dar de alta?")) {
             e.preventDefault();
             var formData = new FormData(document.getElementById("formAlta"));
+            formData.get("altaPdf").name == "" ? formData.delete("altaPdf") : null;
             $.ajax({
                 url: "alta.php",
                 type: "post",
@@ -109,20 +110,20 @@ function hacerTabla() {
 
                 var tdPDF = document.createElement("td");
                 tdPDF.setAttribute("class", "tablet");
-                tdPDF.innerHTML = `<button pdfValue="${value.pdf}" onclick='verPdf()'>Pdf</button>`;
+                tdPDF.innerHTML = `<button pdfValue="${value.pdf}" onclick='verPdf()'><b>PDF</b></button>`;
 
                 var tdMod = document.createElement("td");
-                tdMod.innerHTML = `<button id='modi' class='${value.idEmpleado}'onclick='abrirModif()'>MODIFICAR</button>`;
+                tdMod.innerHTML = `<button id='modi' class='${value.idEmpleado}'onclick='abrirModif();validModi'><b>MODIFICAR</b></button>`;
 
                 var tdBaja = document.createElement("td");
-                tdBaja.innerHTML = `<button id='baja' class='${value.idEmpleado}'onclick='hacerBorrado()'>BORRAR</button>`;
+                tdBaja.innerHTML = `<button id='baja' class='${value.idEmpleado}'onclick='hacerBorrado()'><b>BORRAR</b></button>`;
 
 
                 tableRow.append(tdIdEmpleado, tdApellido, tdNombre, tdTelefono, tdArea, tdFechaAlta, tdPDF, tdMod, tdBaja);
                 tablaDatos.append(tableRow);
             });
             $("#contenidoTabla").append(tablaDatos);
-            $("footer").html(`Nro de empleados: ${objEmp.empleados.length}`);
+            $("#piePagina").html(`Nro de empleados: ${objEmp.empleados.length}`);
         }
 
     });
@@ -133,6 +134,8 @@ function verPdf() {
     if (i == "") {
         alert("Este usuario no cuenta con PDF")
     } else {
+        $("table, header").css("pointerEvents", "none");
+        $("table, header,footer").css("opacity", 0.2);
         $("#ventanaModalPdf").css("display", "block");
         $("#contenidoModalPDF").empty();
         $("#contenidoModalPDF").html("<iframe width='100%' height='600px' src='data:application/pdf;base64," + i + "'></iframe>");
@@ -141,19 +144,33 @@ function verPdf() {
 
 function cerrarPdf() {
     $("#ventanaModalPdf").css("display", "none");
+    $("table, header").css("pointerEvents", "auto");
+    $("table, header,footer").css("opacity", 1);
 }
 
 function validAlta() {
     if ($("#altaID").isValid() &&
-        $("#altaApellido").isValid() &&
-        $("#altaTelefono").isValid() &&
-        $("#altaArea").isValid() &&
-        $("#altaNombre").isValid() &&
+        esValidoString($("#altaApellido")) &&
+        esValidoTelefono($("#altaTelefono")) &&
+        esValidoString($("#altaNombre")) &&
         $("#altaFechaAlta").isValid()) {
 
         $("#altaValidar").attr("disabled", false);
     } else {
         $("#altaValidar").attr("disabled", true);
+    }
+};
+
+function validModi() {
+    if ($("#modiID").isValid() &&
+        esValidoString($("#modiApellido")) &&
+        esValidoTelefono($("#modiTelefono")) &&
+        esValidoString($("#modiNombre")) &&
+        $("#modiFechaAlta").isValid()) {
+
+        $("#modiValidar").attr("disabled", false);
+    } else {
+        $("#modiValidar").attr("disabled", true);
     }
 };
 
@@ -196,7 +213,7 @@ $(function () {
                 processData: false,
                 success: function () {
                     hacerTabla();
-                    cerrarAlta();
+                    cerrarModif()
                 }
             })
         }
@@ -206,28 +223,6 @@ $(function () {
     })
     $(".divFormularioModi").css("display", "none");
 });
-// function actualizarEmpleado(idEmpleado) {
-//     if (confirm("Estas seguro de cambiar estos datos?")) {
-//         $objAjax = $.ajax({
-//             type: "POST",
-//             url: "./update.php",
-//             data: {
-//                 idEmpleado: idEmpleado,
-//                 apellido: $("#modiApellido").val(),
-//                 telefono: $("#modiTelefono").val(),
-//                 area: $("#modiArea").val(),
-//                 nombre: $("#modiNombre").val(),
-//                 fechaAlta: $("#modiFechaAlta").val()
-//             },
-//             success: function () {
-//                 hacerTabla();
-//                 cerrarModif();
-//             }
-//         })
-//     } else {
-//         alert("Has cancelado la operación");
-//     }
-// };
 
 function hacerUpdate() {
     actualizarEmpleado(valorACambiar);
@@ -235,16 +230,22 @@ function hacerUpdate() {
 
 function abrirAlta() {
     $(".divFormularioAlta").css("display", "block");
+    $("table, header").css("pointerEvents", "none");
+    $("table, header,footer").css("opacity", 0.2);
     $("#doc").addClass("modalDesactivado");
 };
 
 function cerrarAlta() {
     $(".divFormularioAlta").css("display", "none");
+    $("table, header").css("pointerEvents", "auto");
+    $("table, header,footer").css("opacity", 1);
     $("#doc").removeClass("modalDesactivado");
 };
 
 function cerrarModif() {
     $(".divFormularioModi").css("display", "none");
+    $("table,header").css("pointerEvents", "auto");
+    $("table, header,footer").css("opacity", 1);
     $("#doc").removeClass("modalDesactivado");
 };
 
@@ -252,10 +253,13 @@ var valorACambiar;
 
 function abrirModif() {
     $(".divFormularioModi").css("display", "block");
+    $("table, header").css("pointerEvents", "none");
+    $("table, header,footer").css("opacity", 0.2);
+    $("header").css("pointerEvents", "none");
     var i = this.document.activeElement.getAttribute("class");
     valorACambiar = i;
     envioModificacion(i);
-    $("#doc").addClass("modalDesactivado");
+
 };
 
 function envioModificacion(idEmpleado) {
@@ -266,13 +270,14 @@ function envioModificacion(idEmpleado) {
         data: { idEmpleado: idEmpleado },
         success: function (respuesta, estado) {
             objetoEmpl = JSON.parse(respuesta);
-
             $("#modiID").val(objetoEmpl.idEmpleado);
             $("#modiApellido").val(objetoEmpl.apellido);
             $("#modiTelefono").val(objetoEmpl.telefono);
             $("#modiArea").val(objetoEmpl.area);
             $("#modiNombre").val(objetoEmpl.nombre);
             $("#modiFechaAlta").val(objetoEmpl.fechaAlta);
+            $("#modiPdf").val(objetoEmpl.pdf);
+            validModi();
         }
     });
 };
@@ -285,6 +290,24 @@ $.fn.isValid = function () {
     return this[0].checkValidity()
 }
 
+function esValidoString(input) {
+    let valorInput = input.val()
+    if (!valorInput) return false
+    var letters = /^[A-zÀ-ú]+$/;
+    if (valorInput.match(letters) && valorInput.length > 2 && valorInput.length < 20) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function esValidoTelefono(input) {
+    let valorInput = input.val()
+    if (!valorInput) return false
+    let reg = new RegExp("^[0-9]{8,10}$")
+    return reg.test(valorInput) ? true : false;
+}
 
 
 

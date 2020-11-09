@@ -10,12 +10,20 @@ $apellido = $_POST['modiApellido'];
 $area = $_POST['modiArea'];
 $nombre = $_POST['modiNombre'];
 $fechaAlta = $_POST['modiFechaAlta'];
-$pdf = file_get_contents($_FILES['modiPdf']['tmp_name']);
+$pdf = $_FILES['modiPdf']['tmp_name'] != "" ? file_get_contents($_FILES['modiPdf']['tmp_name']) : "";
 
+if ($pdf == "") {
+    $sentencia = $mysqli->prepare("update empleados set telefono=?,apellido=?,area=?,nombre=?,fechaAlta=? where idEmpleado=?;");
 
-$sentencia = $mysqli->prepare("update empleados set telefono=?,apellido=?,area=?,nombre=?,fechaAlta=?,pdf=? where idEmpleado=?;");
+    $sentencia->bind_param('issssi', $telefono, $apellido, $area, $nombre, $fechaAlta, $idEmpleado);
 
-$sentencia->bind_param('isssssi', $telefono, $apellido, $area, $nombre, $fechaAlta, $pdf, $idEmpleado);
+    $sentencia->execute();
+    $mysqli->close();
+} else {
+    $sentencia = $mysqli->prepare("update empleados set telefono=?,apellido=?,area=?,nombre=?,fechaAlta=?,pdf=? where idEmpleado=?;");
 
-$sentencia->execute();
-$mysqli->close();
+    $sentencia->bind_param('isssssi', $telefono, $apellido, $area, $nombre, $fechaAlta, $pdf, $idEmpleado);
+
+    $sentencia->execute();
+    $mysqli->close();
+}
