@@ -1,3 +1,7 @@
+<?php
+include("./manejoSesion.inc");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABM</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./aplicacion/style.css">
 </head>
 
 <body>
@@ -22,6 +26,7 @@
         <div class="divBotones">
             <button id="load">Cargar</button>
             <button id="delete">Vaciar</button>
+            <button id="btCierraSesion">LogOut</button>
             <button id="altaEmpleado">Alta</button>
         </div>
     </header>
@@ -142,7 +147,7 @@
             <form class="formularioAlta" id="formModi">
                 <label for="modiID">ID Empleado</label>
                 <br>
-                <input type="number" name="modiID" required id="modiID">
+                <input type="number" name="modiID" required disabled id="modiID">
                 <br>
                 <label for="modiApellido">Apellido</label>
                 <br>
@@ -172,7 +177,7 @@
                 <br>
                 <label for="modiPdf">PDF: </label>
                 <br>
-                <input type="file" name="modiPdf">
+                <input type="file" name="modiPdf" id="modiPdf">
                 <br>
                 <input type="submit" id="modiValidar" disabled>
             </form>
@@ -191,10 +196,9 @@
     </footer>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-    <script src="./script.js"></script>
+    <script src="./aplicacion/script.js"></script>
 </body>
 
 </html>

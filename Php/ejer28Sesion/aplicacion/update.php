@@ -1,4 +1,7 @@
 <?php
+include("../manejoSesion.inc");
+?>
+<?php
 
 require("./constantesBase.php");
 
@@ -11,6 +14,8 @@ $area = $_POST['modiArea'];
 $nombre = $_POST['modiNombre'];
 $fechaAlta = $_POST['modiFechaAlta'];
 $pdf = $_FILES['modiPdf']['tmp_name'] != "" ? file_get_contents($_FILES['modiPdf']['tmp_name']) : "";
+
+echo $idEmpleado . $telefono . $apellido . $area . $nombre . $fechaAlta;
 
 if ($pdf == "") {
     $sentencia = $mysqli->prepare("update empleados set telefono=?,apellido=?,area=?,nombre=?,fechaAlta=? where idEmpleado=?;");

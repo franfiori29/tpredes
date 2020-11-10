@@ -14,19 +14,19 @@ $(function () {
             e.preventDefault();
             let empleadoID = $("#altaID").val();
             $.get({
-                url: "modi.php",
+                url: "./aplicacion/checkAlta.php",
                 data: {
                     idEmpleado: empleadoID
                 }
             }).done(function (res) {
                 res = JSON.parse(res);
-                if (res.idEmpleado) {
+                if (res == "error") {
                     alert("Ya existe un usuario con ese ID")
                 } else {
                     var formData = new FormData(document.getElementById("formAlta"));
                     formData.get("altaPdf").name == "" ? formData.delete("altaPdf") : null;
                     $.ajax({
-                        url: "alta.php",
+                        url: "./aplicacion/alta.php",
                         type: "post",
                         dataType: "html",
                         data: formData,
@@ -77,7 +77,7 @@ function hacerTabla() {
     $("#contenidoTabla").html("<p>Aguardando respuesta del servidor....></p>");
     $.ajax({
         type: "get",
-        url: "datosConexion.php",
+        url: "./aplicacion/datosConexion.php",
         data: {
             orden: $("#orden").val(),
             filtroIdEmpleado: $("#filtroIdEmpleado").val(),
@@ -190,7 +190,7 @@ function borrar(idEmpleado) {
     if (confirm("Esta seguro que quiere eliminar el empelado?")) {
         $.ajax({
             type: "get",
-            url: "./delete.php",
+            url: "./aplicacion/delete.php",
             data: {
                 idEmpleado: idEmpleado
             },
@@ -213,32 +213,19 @@ $(function () {
     $("#formModi").on("submit", function (e) {
         if (confirm("Esta Seguro que quiere modificar este usuario?")) {
             e.preventDefault();
-            let empleadoID = $("#modiID").val();
-            $.get({
-                url: "modi.php",
-                data: {
-                    idEmpleado: empleadoID
-                }
-            }).done(function (res) {
-                res = JSON.parse(res);
-                if (res.idEmpleado && res.idEmpleado != valorACambiar) {
-                    alert("Ya existe un usuario con ese ID")
-                }
-                else {
-                    var formData = new FormData(document.getElementById("formModi"));
-                    $.ajax({
-                        url: "update.php",
-                        type: "post",
-                        dataType: "html",
-                        data: formData,
-                        cache: false,
-                        contentType: false,
-                        processData: false,
-                        success: function () {
-                            hacerTabla();
-                            cerrarModif();
-                        }
-                    })
+            $("#modiID").prop("disabled", false);
+            var formData = new FormData(document.getElementById("formModi"));
+            $.ajax({
+                url: "./aplicacion/update.php",
+                type: "post",
+                dataType: "html",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function () {
+                    hacerTabla();
+                    cerrarModif();
                 }
             })
         } else {
@@ -253,14 +240,12 @@ function abrirAlta() {
     $(".divFormularioAlta").css("display", "block");
     $("table, header").css("pointerEvents", "none");
     $("table, header,footer").css("opacity", 0.2);
-    $("#doc").addClass("modalDesactivado");
 };
 
 function cerrarAlta() {
     $(".divFormularioAlta").css("display", "none");
     $("table, header").css("pointerEvents", "auto");
     $("table, header,footer").css("opacity", 1);
-    $("#doc").removeClass("modalDesactivado");
     $("#formAlta").trigger("reset");
 };
 
@@ -268,7 +253,6 @@ function cerrarModif() {
     $(".divFormularioModi").css("display", "none");
     $("table,header").css("pointerEvents", "auto");
     $("table, header,footer").css("opacity", 1);
-    $("#doc").removeClass("modalDesactivado");
 };
 
 var valorACambiar;
@@ -286,9 +270,9 @@ function abrirModif() {
 
 function envioModificacion(idEmpleado) {
     $("#formModi").val(idEmpleado);
-    var objAjax = $.ajax({
+    $.ajax({
         type: "get",
-        url: "./modi.php",
+        url: "./aplicacion/modi.php",
         data: { idEmpleado: idEmpleado },
         success: function (respuesta, estado) {
             objetoEmpl = JSON.parse(respuesta);
@@ -334,4 +318,9 @@ function esValidoTelefono(input) {
 $("#formModi input").change(validModi);
 $("#formAlta input").change(validAlta);
 
+$(document).ready(function () {
+    $("#btCierraSesion").click(function () {
+        location.href = "./destruirsesion.php";
+    });
+});
 

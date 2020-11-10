@@ -1,4 +1,7 @@
 <?php
+include("../manejoSesion.inc");
+?>
+<?php
 
 require("./constantesBase.php");
 

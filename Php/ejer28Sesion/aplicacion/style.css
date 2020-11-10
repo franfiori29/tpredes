@@ -11,6 +11,11 @@ header,footer {
     text-align: center;
 }
 
+input[type=file]{
+    width:90px;
+    color:transparent;
+}
+
 header {
     display: flex;
     justify-content: space-around;

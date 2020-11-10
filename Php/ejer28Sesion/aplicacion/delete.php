@@ -1,5 +1,5 @@
 <?php
-
+include("../manejoSesion.inc");
 require("./constantesBase.php");
 
 $mysqli = new mysqli(SERVER, USUARIO, PASS, BASE, PORT);
