@@ -104,7 +104,7 @@ include("./manejoSesion.inc");
             <form class="formularioAlta" id="formAlta" method="post" enctype="multipart/form-data">
                 <label for="altaID">Id Empleado</label>
                 <br>
-                <input type="number" name="altaID" required id="altaID" min="0">
+                <input type="number" name="altaID" required id="altaID" min="1">
                 <br>
                 <label for="altaApellido">Apellido</label>
                 <br>
@@ -112,7 +112,7 @@ include("./manejoSesion.inc");
                 <br>
                 <label for="altaTelefono">Telefono</label>
                 <br>
-                <input type="number" name="altaTelefono" required id="altaTelefono" min="10000000">
+                <input type="number" name="altaTelefono" required id="altaTelefono" min="40000000">
                 <br>
                 <label for="alteArea">Area: </label>
                 <br>
@@ -155,7 +155,7 @@ include("./manejoSesion.inc");
                 <br>
                 <label for="modiTelefono">Teléfono</label>
                 <br>
-                <input type="number" name="modiTelefono" required id="modiTelefono">
+                <input type="number" name="modiTelefono" required id="modiTelefono" min="40000000">
                 <br>
                 <label for="modiArea">Area</label>
                 <br>

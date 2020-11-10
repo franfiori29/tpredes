@@ -339,8 +339,9 @@ function esValidoString(input) {
 
 function esValidoTelefono(input) {
     let valorInput = input.val()
-    if (!valorInput) return false
-    let reg = new RegExp("^[0-9]{8,11}$")
+    if (!valorInput) return false;
+    if (valorInput < 40000000) return false;
+    let reg = new RegExp("^[0-9]{8,11}$");
     return reg.test(valorInput) ? true : false;
 }
 
