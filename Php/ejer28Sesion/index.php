@@ -185,7 +185,7 @@ include("./manejoSesion.inc");
 
         <div id="ventanaModalPdf">
             <div class="encabezadoModal">
-                <div>Encabezado Formulario de Alta</div>
+                <div>Encabezado ventana modal</div>
                 <button id="botonCerrarPdf"><a>X</a></button>
             </div>
             <div id="contenidoModalPDF"></div>

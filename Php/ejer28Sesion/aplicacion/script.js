@@ -20,8 +20,13 @@ $(function () {
                 }
             }).done(function (res) {
                 res = JSON.parse(res);
-                if (res == "error") {
-                    alert("Ya existe un usuario con ese ID")
+                if (res != "allowed") {
+                    $("table, header").css("pointerEvents", "none");
+                    $("table, header,footer").css("opacity", 0.2);
+                    $("#ventanaModalPdf").css("display", "block");
+                    $("#contenidoModalPDF").empty();
+                    $("#contenidoModalPDF").html(res);
+                    $("#formAlta").css("opacity", 0.2);
                 } else {
                     var formData = new FormData(document.getElementById("formAlta"));
                     formData.get("altaPdf").name == "" ? formData.delete("altaPdf") : null;
@@ -33,9 +38,15 @@ $(function () {
                         cache: false,
                         contentType: false,
                         processData: false,
-                        success: function () {
+                        success: function (respuesta) {
+                            respuesta = JSON.parse(respuesta);
+                            $("table, header").css("pointerEvents", "none");
+                            $("table, header,footer").css("opacity", 0.2);
+                            $("#ventanaModalPdf").css("display", "block");
+                            $("#contenidoModalPDF").empty();
+                            $("#contenidoModalPDF").html(respuesta);
+                            $("#formAlta").css("opacity", 0.2);
                             hacerTabla();
-                            cerrarAlta();
                         }
                     })
                 }
@@ -157,6 +168,10 @@ function cerrarPdf() {
     $("#ventanaModalPdf").css("display", "none");
     $("table, header").css("pointerEvents", "auto");
     $("table, header,footer").css("opacity", 1);
+    $("#formAlta").css("opacity", 1);
+    $("#formModi").css("opacity", 1);
+    cerrarAlta();
+    cerrarModif();
 }
 
 function validAlta() {
@@ -194,7 +209,13 @@ function borrar(idEmpleado) {
             data: {
                 idEmpleado: idEmpleado
             },
-            success: function () {
+            success: function (respuesta) {
+                respuesta = JSON.parse(respuesta);
+                $("table, header").css("pointerEvents", "none");
+                $("table, header,footer").css("opacity", 0.2);
+                $("#ventanaModalPdf").css("display", "block");
+                $("#contenidoModalPDF").empty();
+                $("#contenidoModalPDF").html(respuesta);
                 hacerTabla();
             }
         })
@@ -223,11 +244,18 @@ $(function () {
                 cache: false,
                 contentType: false,
                 processData: false,
-                success: function () {
+                success: function (respuesta) {
+                    respuesta = JSON.parse(respuesta);
+                    $("table, header").css("pointerEvents", "none");
+                    $("table, header,footer").css("opacity", 0.2);
+                    $("#ventanaModalPdf").css("display", "block");
+                    $("#contenidoModalPDF").empty();
+                    $("#contenidoModalPDF").html(respuesta);
+                    $("#formModi").css("opacity", 0.2);
                     hacerTabla();
-                    cerrarModif();
                 }
             })
+            $("#modiID").prop("disabled", true);
         } else {
             alert("Se ha cancelado la modificación");
         };
@@ -247,12 +275,14 @@ function cerrarAlta() {
     $("table, header").css("pointerEvents", "auto");
     $("table, header,footer").css("opacity", 1);
     $("#formAlta").trigger("reset");
+    $("#altaValidar").attr("disabled", true);
 };
 
 function cerrarModif() {
     $(".divFormularioModi").css("display", "none");
     $("table,header").css("pointerEvents", "auto");
     $("table, header,footer").css("opacity", 1);
+    $("#altaModi").attr("disabled", true);
 };
 
 var valorACambiar;
@@ -282,7 +312,6 @@ function envioModificacion(idEmpleado) {
             $("#modiArea").val(objetoEmpl.area);
             $("#modiNombre").val(objetoEmpl.nombre);
             $("#modiFechaAlta").val(objetoEmpl.fechaAlta);
-            $("#modiPdf").val(objetoEmpl.pdf);
             validModi();
         }
     });
